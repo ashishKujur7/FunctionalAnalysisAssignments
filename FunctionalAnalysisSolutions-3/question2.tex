@@ -1,0 +1,29 @@
+\section{Question 2}
+\horz
+Let $X$ be a real NLS and  $T: X \rightarrow \mathbb R$ be a non continuous linear functional. Then show that $T(U) = \mathbb R$ for any non empty open subset $U \subseteq X.$
+\horz
+\begin{proof}
+    We first show that $T(B_{X} \left( 0,1 \right) )= \R$ and we will show that this is all we need. First, suppose that $T$ is not continuous. Therefore, for every $k > 0$,
+    \begin{align}
+	\abs{Tx} > k \text{ for some } x \in \overline{B_{X} \left( 0,1 \right)}\text{.}
+	\label{eqn:q2}
+    \end{align}
+    It is clear that $T\left( B_{X} \left( 0,1 \right) \right) \subset \R$. To show the reverse inclusion, let $\alpha \in \R$ then by \ref{eqn:q2}, we have that there is some $x\in X$ with $\norm{x} \le 1$ and $\abs{Tx} > \abs{\alpha}+1$. Now, now define the vector $y=\frac{\alpha}{Tx} x$. Observe that 
+    \begin{equation*}
+	Ty = \alpha \frac{Tx}{Tx} = \alpha
+    \end{equation*}
+    and 
+    \begin{align*}
+	\norm{y} &= \abs{\frac{\alpha}{Tx}} \norm{x} \\
+	&< \frac{\alpha}{\abs{\alpha} +1} \norm{x} \\
+	&\le \norm{x} =1
+    \end{align*}
+    Hence, we have that $\alpha \in T\left( B\left( 0,1 \right) \right)$. It remains to show that it suffices to work on the unit ball.
+
+    Let $U$ be any nonempty open set in $X$. Then there is some point $x_{0} \in U$ and some $r > 0$ such that $B\left( x_{0},r \right) \subset U$. Observe that
+    \begin{align*}
+	T\left( B\left( x_{0},r \right) \right) &=  T \left( x_{0} + r B\left( 0,1 \right) \right) \\
+	&= T(x_{0}) + r B\left( 0,1 \right)
+    \end{align*}
+    Since by the previous argument, we have $B\left( 0,1 \right) = \R$. Hence, we have that $\R \subset U$ and thus, we are done.
+\end{proof}

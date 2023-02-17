@@ -1,0 +1,45 @@
+\section{Question 1}
+\horz
+Let $V$ and $W$ be two NLS and $T: V \rightarrow W$ be a linear map. Show that $T$ is continuous if and only if $T$ maps every Cauchy sequence of $V$ to a Cauchy sequence of $W$.
+\horz
+
+\begin{proof}
+    Let $V,W$ be two NLS and let $T: V\to W$ be a linear map.
+
+    $\left( \Longrightarrow \right)$ Suppose that $T$ is continuous. Let $\left\{ x_{n} \right\}$ be a Cauchy sequence in $X$. We want to show that $\left\{ Tx_{n} \right\}$ is Cauchy sequence in $Y$. To do so, let $\varepsilon > 0$ be given. By the continuity of $T$, there is some $k> 0$ such that
+    \begin{equation}
+	\norm{Tx}\le k\norm{x} \text{ for every } x \in X\text{.}
+	\label{eqn:q1-continuity-of-T}
+    \end{equation}
+    Since $\left\{ x_{n} \right\}$ is Cauchy, there is some $N\in \N$ such that
+    \begin{equation}
+	\norm{x_{n}-x_{m}} < \frac{\varepsilon}{k} \text{ for every } n,m \ge N
+	\label{eqn:q1-cauchy}
+    \end{equation}
+    Thus, for every $n,m \ge N$, we have that
+    \begin{align*}
+	\norm{Tx_{n} - Tx_{m}} & \le k \norm{x_{n} - x_{m}} & \text{from } \ref{eqn:q1-continuity-of-T} \\
+	& < \varepsilon & \text{from } \ref{eqn:q1-cauchy}
+    \end{align*}
+    This shows that $\left\{ Tx_{n} \right\}$ is Cauchy in $Y$.
+
+    $\left( \Longleftarrow \right)$ We prove it by contrapostitively. Suppose that $T$ is not continuous. Then for every $k > 0$,
+    \begin{align*}
+	\norm{Tx} &> k \norm{x} \text{ for some } x \in X\text{.}
+    \end{align*}
+    Thus, for each $n\in \N$, we can find some $x_{n} \in X$ such that $\norm{Tx_{n}} > n^{2} \norm{x_{n}}$. Consider the sequence $\left\{ y_{n} \right\}$ in $V$ defined by 
+    \begin{align*}
+	y_{n} = \frac{x_{n}}{n\norm{x_{n}}} \text{ for each } n \in \N
+    \end{align*}
+    We now show that $\left\{ y_{n} \right\}$ is Cauchy. Let $\varepsilon > 0$ be given. Select $N \in \N$ such that $\frac{2}{N}<\varepsilon$. For $k \in \N$ and $n\ge N$, we have that
+    \begin{align*}
+    \norm{y_{n+k} - y_{m}} &= \norm{\frac{x_{n+k}}{(n+k)\norm{x_{n+k}}}-  \frac{x_{n}}{n\norm{x_{n}}}} \\
+    &\le \frac{1}{n+k} + \frac{1}{n} \\
+    &= \frac{2}{n} \le \frac{2}{N} < \varepsilon
+    \end{align*}
+    This shows that $\left\{ y_{n} \right\}$ is Cauchy but on the other hand, we have that
+    \begin{align*}
+	\norm{Ty_{n}} &= \norm{T\left( \frac{x_{n}}{n\norm{x_{n}}} \right)} >n
+    \end{align*}
+    This shows that $\left\{ Ty_{n} \right\}$ is unbounded, a property which Cauchy sequences cannot have.
+\end{proof}

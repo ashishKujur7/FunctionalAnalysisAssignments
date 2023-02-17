@@ -1,2 +1,2 @@
-# FunctionalAnalysisAssignments
+# Functional Analysis Assignments
 Just a place to keep solutions to the problems that I have solved...

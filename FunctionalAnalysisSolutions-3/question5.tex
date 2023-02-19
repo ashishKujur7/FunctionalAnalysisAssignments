@@ -1,0 +1,19 @@
+\section{Question 5}
+\horz
+Let $T$ be a finite  rank  (say of rank $k$)  continuous linear operator from a Hilbert space $H$ into itself. Show that there exist a linearly independent set $\{x_1,\ldots,x_k\}$ and $\{y_1,\ldots,y_k\}$ in $H$ such that $$T= (x_1\otimes y_1) + \cdots + (x_k\otimes y_k).$$  
+\horz
+\begin{proof}[Solution]
+    We prove this by induction. Let $T : H \to H$ be a continuous linear operator on a Hilbert space $H$. Suppose that $\operatorname{rank} \left( T \right) = 1$. Then there exists a nonzero vector $y$ such that $\operatorname{Im} \left( T \right) = \operatorname{span} \left\{ y \right\}$. Thus for each vector $v$, there is some unique $\lambda _{v}$ such that $Tv= \lambda_{v} y$. Now consider the linear functional $f: H \to \F$ given by
+    \begin{equation*}
+	v \stackrel{f}{\mapsto} \lambda_{v}
+    \end{equation*}
+    It is easy to see that $f$ is a linear functional. Hence, by Riesz Representation therorem, we have that there is a unique vector $x \in H$ such that 
+    \begin{equation*}
+	f(v)=\ip{v,x} \text{ for each } v \in V.
+    \end{equation*}
+    Therefore, we have that 
+    \begin{equation*}
+	Tv= \lambda_{v} y = f(v)x = \ip{v,x}y \text{ for each } v\in V\text{.}
+    \end{equation*}
+    Now for any $x,y\in V$, define $x\otimes y : V \to V$ by $\left( x\otimes y \right) \left( v \right) = \ip{v,x} y$ for each $v\in V$.
+\end{proof}

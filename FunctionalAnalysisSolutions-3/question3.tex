@@ -1,0 +1,31 @@
+\section{Question 3}
+\horz
+Let $T: \mathscr C^1[0, 1] \rightarrow \mathscr C[0, 1]$ be the linear map defined by $T(f) = f',\,\,f\in  \mathscr C^1[0, 1],$ where $\mathscr C[0,1]$ equipped with  the usual sup norm $\|\cdot\|_{\infty}.$ Show that $T$ is not continuous if $\mathscr C^1[0,1]$ is equipped with  the usual sup norm $\|\cdot\|_{\infty}.$ But $T$ is a continuous linear transformation and $\|T\|=1,$ if   $\mathscr C^1[0, 1]$ endowed with the following norm 
+\begin{align}
+    \|f\| = \max \{\|f\|_{\infty},\|f^{\prime}\|_{\infty}\}.
+    \label{eqn:q3-norm}
+\end{align}
+\horz
+
+\begin{proof}[Solution]
+    Let $T: \scrC ^{1} [0,1] \to \scrC [0,1]$ be given by $Tf=f'$. Let $\scrC^{1} [0,1]$ be given the sup norm first and $\scrC[0,1]$ be given the same sup norm. Consider the sequence of functions $f_{n} : [0,1] \to \R$ given by 
+    \begin{align*}
+	f_{n} \left( x \right) = \sin \left( nx \right)
+    \end{align*}
+    for every $x\in [0,1]$. Then we have that
+    \begin{align*}
+	f_{n}' \left( x \right) = n \cos \left( nx \right)
+    \end{align*}
+    for each $x \in [0,1]$.
+    Hence, we have that $\norm{f_{n}}_{\infty} = 1$ and
+    \begin{align*}
+	\norm{Tf}=\norm{f_{n}'}_{\infty} &= \norm{n \cos \left( nx \right)}_{\infty} \\
+	&= n
+    \end{align*}
+    for each $n\in \N$.
+    Hence, we have that $T$ is not a bounded linear operator. On the other hand, let's suppose that $\scrC ^{1} [0,1]$ is given the norm specified in Equation \ref{eqn:q3-norm}. We now that that $T$ is continuous with the specified norm. Let $f\in \scrC^{1}[0,1]$ with $\norm{f} \le 1$ then we have that
+    \begin{align*}
+	\norm{Tf}_{\infty}=\norm{f'}_{\infty} \le \norm{f} \le 1\text{.}
+    \end{align*}
+    Hence, this shows that $T$ is continuous.
+\end{proof}

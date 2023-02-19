@@ -1,0 +1,86 @@
+\section{Question 8}
+\horz
+Let $c$ denotes the set of all convergent sequence and $c_0$ denotes the set of all convergent sequences whose limit is $0.$ 
+\begin{itemize}
+\item[(a)] Show that $c$ and $c_0$ is a closed subspace of $\ell^{\infty}(\mathbb N).$
+\item[(b)]  Show that $c_0$ admits a Schauder basis, namely, $\{e_j: j\in\mathbb N\}.$
+\item [(c)]  Let $e$ be the sequence $(1,1,1,\ldots).$ Show that $\{e,e_1,e_2,e_3,\ldots\}$ forms a Schauder basis for $c.$
+\item[(d)] Show that $c_0^*$ is isometrically isomorphic to $\ell^1(\mathbb N).$
+\item[(e)]  Show that $c^*$ is isometrically isomorphic to $\ell^1(\mathbb N)$ as well.
+\item[(f)*] Show that the space $c_0$ and $c$ are not isometrically isomorphic. (Hint: A point $p$ of a closed convex set $S$ in a normed linear space $X$ is called an extreme point of $S$ if $p$ can not be written as convex combination of two distinct points in $S.$   An isometry must take an extreme point to an extreme point. Note that closed unit ball of $c_0$ has no extreme point but closed unit ball of $c$ has extreme points.)
+\end{itemize}
+\horz
+
+\begin{proof}
+    Well, well:
+    \begin{enumerate}[label=(\alph*)]
+	\item Let $\left( x_{n} \right)_{n\in \N}$ be a sequence in $c_{0}$ which converges to some $y \in \ell ^{\infty} \left( \N \right)$. We need to show that $y \in c_{0}$.
+
+	    For each $n \in \N$, let us denote
+	    \begin{equation*}
+		x_n = \left( x_{nk} \right)_{k\in \N}.
+	    \end{equation*}
+	    Since $\left( x_{n} \right)_{n \in \N}$ is a sequence in $c_{0}$, we have that for each $n\in \N$, the sequence $\left( x_{nk} \right)_{k\in \N}$ converges to $0$.
+
+	    Now, we proceed to show that the sequence $\left( y_{k} \right)_{k \in \N}$ converges to $0 \in \C$. First, let $\varepsilon > 0$ be given. Select an $N \in \N$ such that 
+	    \begin{equation*}
+		\norm{y-x_{N}}_{\infty} < \frac{\varepsilon}{2}.
+	    \end{equation*}
+	    This can be done because $\left( x_{n} \right)_{n\in \N}$ converges to $y$ in the $\ell ^{\infty} \left( \N \right)$ norm. Since $\left( x_{Nk} \right)_{k\in \N}$ converges to $0 \in \C$, we can find a $M \in \N$ such that
+	    \begin{equation*}
+		\abs{x_{Nk}}< \frac{\varepsilon}{2} \text{ for every } k \ge N.
+	    \end{equation*}
+
+	    Consider the following for $k \ge N$:
+	    \begin{align*}
+		\abs{y_{k}} &\le \abs{y_{k}-x_{Nk}} + \abs{x_{Nk}} \\
+		&\le \norm{y-x_{N}}_{\infty} + \abs{x_{Nk}} \\
+		& < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+	    \end{align*}
+	    This shows that $y \in c_{0}$. Hence, $c_{0}$ is closed.
+
+	    Now, we proceed to show that $c$ is closed. Let $\left( x_{n} \right)_{n\in \N}$ be a sequence in $c$ converging to some $y \in \ell ^{\infty} \left( \N \right)$. We want to show that $y \in c$. Since for each $n\in \N$, $x_{n} \in c$, we can let $\xi_{n} = \lim_{k \to \infty} x_{nk}$.
+
+	    We now show that $\left( \xi_{n} \right)_{n\in \N}$ is Cauchy in $\C$ (hence convergent). Let $\varepsilon > 0$ be given. Select $N \in \N$ such that
+	    \begin{equation*}
+		\norm{x_{n}-x_{m}}_{\infty} < \frac{\varepsilon}{3} \text{ for each } n,m \ge N.
+	    \end{equation*}
+	    This can be done because $\left( x_{n} \right)_{n\in \N}$ is convergent, hence, Cauchy in $\ell ^{\infty} \left( \N \right)$.
+
+	    Now, let $n,m \ge N$. Select $K \in \N$ large enough so that
+	    \begin{align*}
+		\abs{\xi_{n} - x_{nK}} < \frac{\varepsilon}{3} \text{ and } \abs{\xi_{m} - x_{mK}} < \frac{\varepsilon}{3} \text{.}
+	    \end{align*}
+	    This can be done because $\xi_{n} = \lim_{k \to \infty} x_{nk}$ for each $n\in \N$.
+
+	    Therefore, we have 
+\begin{align*}
+    \abs{\xi_{n}-\xi_{m}} &\le \abs{\xi_{n} - x_{nK}} + \abs{\xi_{mK} - x_{mK}} + \abs{x_{mK} - x_{nK}} \\
+    &\le \abs{\xi_{n} - x_{nK}} + \abs{\xi_{mK} - x_{mK}} + \norm{x_{n} -x_{m}}_{\infty} \\
+    &< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.
+\end{align*}
+This shows that $\left( \xi_{n} \right)_{n\in \N}$ is Cauchy.
+Hence, $\left( \xi_{n} \right)_{n\in \N}$ converges to some $\xi \in \C$.
+
+    We now show that $\left( y_{k} \right)_{k\in \N}$ converges to $\xi$. Let $\varepsilon > 0$ be given. Select $N\in \N$ large enough so that
+    \begin{equation*}
+	\norm{y-x_{N}}_{\infty} < \frac{\varepsilon}{3} \text{ and } \abs{\xi_{N} - \xi} < \frac{\varepsilon}{3}.
+    \end{equation*}
+
+    Now, select $K \in \N$ such that 
+    \begin{equation*}
+	\abs{x_{Nk} - \xi_{N}} < \frac{\varepsilon}{3} \text{ for every } k \ge K.
+    \end{equation*}
+
+    For $k\ge K$, we have 
+    \begin{align*}
+	\abs{y_{k} - \xi} &= \abs{y_{k} - x_{Nk} + x_{Nk} - \xi_{N} + \xi_{N} - \xi} \\
+&\le \abs{y_{k} - x_{Nk}} + \abs{x_{Nk} - \xi_{N}} + \abs{\xi_{N} - \xi} \\
+&< \norm{y-x_{n}}_{\infty} +  \abs{x_{Nk} - \xi_{N}} + \abs{\xi_{N} - \xi} \\
+&< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3}
+= \varepsilon.
+    \end{align*}
+    This shows that $c$ is closed.
+\item Let $x\in $.
+    \end{enumerate}
+\end{proof}

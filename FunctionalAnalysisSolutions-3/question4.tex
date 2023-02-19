@@ -1,0 +1,55 @@
+\section{Question 4}
+\horz
+Let $X$ and $Y$ be two NLS and $T$ be a continuous linear map from $X$ into $Y.$ Show that following holds:
+\begin{align}
+    \underbrace{\sup \{ \|Tx\|_Y : \|x\|_X \leqslant 1\}}_{:=\alpha} &= \underbrace{\sup \{ \|Tx\|_Y : \|x\|_X < 1\}}_{:=\beta} \\
+    &= \underbrace{\sup \{ \|Tx\|_Y : \|x\|_X =1\}}_{:=\chi}\\ 
+    &= \underbrace{\sup \{\frac{\|Tx\|_Y}{\|x\|_X} : x\in X, x\neq 0 \}}_{:=\delta}.
+    \label{eqn:q4}
+\end{align}
+\horz
+\begin{proof}[Solution]
+    We first prove that $\alpha = \beta$. Observe that  
+    \begin{align*}
+	\left\{ \norm{Tx}_{Y} : \norm{x}_{X} < 1 \right\} &\subset \left\{ \norm{Tx}_{Y} : \norm{x}_{X} \le 1 \right\} \\
+	\leadsto \sup \left\{ \norm{Tx}_{Y} : \norm{x}_{X} < 1 \right\} &\le \sup \left\{ \norm{Tx}_{Y} : \norm{x}_{X} \le 1 \right\} \\
+	\leadsto \beta &\le \alpha
+    \end{align*}
+
+    Now, let $\varepsilon > 0$ be given. Then there exists $x_{0}\in X$ satisfying $\norm{x_{0}}_{X} \le 1$ such that 
+    \begin{equation*}
+	\alpha - \varepsilon < \norm{Tx_{0}}_{Y}.
+    \end{equation*}
+    For each $n\in \N$, we have that 
+    \begin{align}
+	\left( 1- \frac{1}{n} \right)\left( \alpha - \varepsilon \right) < \norm{T\left( \left( 1-\frac{1}{n}  \right)x_{0} \right)} \le \beta.
+	\label{eqn:q4-1}
+    \end{align}
+    Note that last inequality is true because 
+    \begin{equation*}
+	\norm{\left( 1-\frac{1}{n} \right) x_{0}} = \left( 1-\frac{1}{n} \right) \norm{x_{0}} < 1.
+    \end{equation*}
+    Let $n\to \infty$ in \ref{eqn:q4-1}, we have that
+    \begin{equation*}
+	\left( \alpha - \varepsilon \right) \le \beta.
+    \end{equation*}
+    Since $\varepsilon > 0$ is arbitrary, we have that $\alpha \le \beta$ and this completes the proof of the first equality.
+
+    We now proceed to show the equality $\alpha = \chi$. By subset argument, it is easy to see that $\chi \le \alpha$. To show the reverse inequality, let $\varepsilon > 0$ be given. Then there exists $x \in X$ with $\norm{x}_{X} \le 1$ such that
+    \begin{equation*}
+	\alpha - \varepsilon < \norm{Tx_{0}}_{Y}
+    \end{equation*}
+    If $\norm{x_{0}}=0$ then we would have that $\alpha - \varepsilon < 0 \le \beta$ and since $\varepsilon > 0$ is arbitrary, we would be done. So, assume that $\norm{x_{0}} > 0$. Then we would have that 
+    \begin{align*}
+	\frac{\alpha - \varepsilon}{ \norm{x_{0}}} < \norm{T\left( \frac{x_{0}}{\norm{x_{0}}} \right)} \le \chi
+	\leadsto \alpha - \varepsilon \le \norm{x_{0}} \chi \leadsto \alpha - \varepsilon \le \chi.
+    \end{align*}
+    Since $\varepsilon > 0$ is arbitrary, we would be done.
+
+    We finally show that $\chi = \delta$. Observe that the sets
+    \begin{align*}
+	\sup \{ \|Tx\|_Y : \|x\|_X =1\}
+	= \sup \left\{ \frac{\|Tx\|_Y}{\|x\|_X} : x\in X, x\neq 0 \right\}\text{.}
+    \end{align*}
+    and hence we are done.
+\end{proof}

@@ -1,0 +1,54 @@
+\section{Question 6}
+\horz
+For each $y=(y_j)_{j\in\mathbb N}$ in $\ell^{\infty}(\mathbb N),$  consider the map $T_y : \ell^{1}(\mathbb N) \to \mathbb C$ defined by $$T_y(x) = \sum\limits_{j=1}^{\infty}x_jy_j,\,\,\,\, \,x = (x_j)_{j\in\mathbb N}\in \ell^{1}(\mathbb N).$$ Show that the map $y \to T_y$ is an isometry from $\ell^{\infty}(\mathbb N)$ onto  $\big(\ell^{1}(\mathbb N)\big)^*.$ Thus $\big(\ell^1(\mathbb N)\big)^*$ is isometrically isomorphic to $\ell^{\infty}(\mathbb N).$ 
+\horz
+
+\begin{proof}[Solution]
+    Fix $y= \left( y_{j} \right)_{j\in \N} \in \ell ^{\infty} \left( \N \right)$. Consider the map 
+    \begin{equation*}
+	T_{y} \left( x \right) = \sum_{j=1}^{\infty} x_{j}y_{j}
+    \end{equation*}
+    for each $x= \left( x_{j} \right)_{j\in \N} \in \ell^{1} \left( \N \right)$.
+
+    It is easy to see that this map is well defined, continuous linear functional by the Holder's inequality. Hence, we have that $T_{y} \in \left( \ell ^{1} \left( \N \right) \right)^{*}$. 
+
+    Now, we show that the map $F: \ell ^{\infty} \left( \N \right) \to \left( \ell ^{1} \left( \N \right) \right)^{*}$ given by
+    \begin{equation*}
+	y \stackrel{F}{\longmapsto} T_{y}
+    \end{equation*}
+It is easy to see that the map is linear and all we need to show is that this map is an isometry and an isomorphism as well.
+First, fix a $y \in \ell^{\infty} \left( \N \right)$ and observe that for any $x\in \ell ^{1} \left( \N \right)$ with $\norm{x}_{1} = 1$, we have that
+\begin{align*}
+    \abs{T_{y} (x)} &= \abs{\sum_{j=1}^{\infty} x_{j}y_{j}} &\\
+    & \le \norm{x}_{1} \norm{y}_{\infty} & \text{Holder's inequality} \\
+    &= \norm{y}_{\infty}
+\end{align*}
+Thus, taking supremum, we have from Question 4 that
+\begin{equation*}
+    \norm{T_{y}}_{(\ell ^{1} \left( \N \right))^{*}} \le \norm{y}_{\infty}
+\end{equation*}
+To show the reverse inequality, observe that for each $i \in \N$, we have that $\norm{e_{1}}_{1} = 1$ and hence, we have that
+\begin{align*}
+    \abs{T_{y} \left( e_{i} \right)} = \abs{y_{i}} \le \norm{T_{y}}_{(\ell ^{1} \left( \N \right))^{\infty}}
+\end{align*}
+for each $i\in \N$. Taking supremums over $i \in \N$, we have that
+\begin{equation*}
+    \norm{y}_{\infty} \le  \norm{T_{y}}_{(\ell ^{1} \left( \N \right))^{\infty}}
+\end{equation*}
+This shows that $y \mapsto T_{y}$ is an isometry. It remains to show that $F$ is an isomorphism. It suffices to show that $F$ is onto.
+
+Let $T \in \left( \ell ^{1} \left( \N \right) \right)^{*}$. We need to find a $y \in \ell ^{\infty} \left( \N \right)$ such that $T=T_{y}$.
+
+For each $i \in \N$, we define
+\begin{equation*}
+    y_{i} = T\left( e_{i} \right).
+\end{equation*}
+
+We now claim that $T=T_{y}$. It is easy to see that 
+\begin{equation*}
+    T\left( e_{i} \right) = T_{y} \left( e_{i} \right)
+\end{equation*}
+Note that $\operatorname{span} \left\{ e_{i} : i \in \N \right\} = c_{00}$ and since $\overline{c_{00}} = \ell ^{1} \left( \N \right)$, we have that $T=T_{y}$ as they agree on a dense subset.
+
+This completes the proof of the claim.
+\end{proof}

@@ -81,6 +81,162 @@ Hence, $\left( \xi_{n} \right)_{n\in \N}$ converges to some $\xi \in \C$.
 = \varepsilon.
     \end{align*}
     This shows that $c$ is closed.
-\item Let $x\in $.
+\item Let $x\in c_{0}$. We show that there exists unique scalars $\left( \alpha_{n} \right)_{n\in \N} \subset \F$ such that
+    \begin{equation*}
+	x= \sum_{i=1}^{\infty} \alpha_{i} e_{i}.
+    \end{equation*}
+    Let $x=\left( x_{n} \right)_{n \in \N}$. We claim that
+    \begin{equation*}
+	x= \lim_{n\to \infty} \sum_{i=1}^{n} x_{i}e_{i}
+    \end{equation*}
+    where the convergence is the $\ell ^{\infty}$-convergence.
+
+    Let $\varepsilon > 0$ be given. Select $N \in \N$ such that 
+    \begin{align*}
+	\abs{x_{i}} < \frac{\varepsilon}{2} \text{ for all } i \ge N \leadsto \sup_{i \ge N} \abs{x_{i}} \le \frac{\varepsilon}{2} < \varepsilon.
+    \end{align*}
+
+    Thus for $n\ge N$, we have 
+    \begin{align*}
+	\norm{x-x_{1}e_{1}-x_{2}e_{2}-\ldots-x_{n}e_{n}}_{\infty} &\le \sup_{i \ge n+1} \abs{x_{i}} \\
+	&\le \sup_{i \ge N} \abs{x_{i}} < \varepsilon.
+    \end{align*}
+
+    This proves our claim.
+
+    Now, we prove uniqueness. Suppose that $x\in c_{0}$ has two different representations:
+    \begin{equation*}
+	x= \sum_{i=1}^{\infty} \alpha_{i} e_{i} \text{ and } x= \sum_{i=1}^{\infty} \beta_{i} e_{i}
+    \end{equation*}
+
+    We show that $\alpha_{i} = \beta_{i}$ for each $i\in \N$. Let $i \in \N$ be arbitrary. Then for any $n \ge i$, we have that
+    \begin{align*}
+	\abs{\alpha_{i} - \beta_{i}} &\le \norm{\sum_{k=1}^{n} \left( \alpha_{k} - \beta_{k} \right) e_{k}}_{\infty} & \text{by definition of the } \infty \text{ norm} \\
+	& \le \norm{\sum_{k=1}^{\infty} \left( \alpha_{k} - \beta_{k} \right)e_{k}}_{\infty} & \text{let } n \to \infty \\
+	& = \norm{0}_{\infty} = 0.
+    \end{align*}
+    Since $i \in \N$ was arbitrary, we are done.
+    
+\item Let $e= \left( 1,1,1, \ldots \right)$. We wish to show that $\left\{ e, e_{1}, e_{2}, \ldots \right\}$ is a Schauder basis for $c$. To do so, let $x\in c$. Suppose that $x=\left( x_{n} \right)_{n\in \N}$ converges to $\xi$. Define a new sequence $x_{0} = x-\xi e$. It is easy to see that $x_{0} \in c_{0}$. Thus, we have from part (b) that for some unique $(\alpha_{i})_{i\in \N} \subset \F $,
+    \begin{align*}
+	x_{0} = \sum_{i=1}^{\infty} \alpha_{i} e_{i} \leadsto x = \xi e + \sum_{i=1}^{\infty} \alpha_{i} e_{i}.
+    \end{align*}
+
+    It remains to prove uniqueness. Let $x= \left( x_{n} \right)_{n\in \N} \in c$. Suppose that 
+    \begin{equation*}
+	x=\alpha e + \sum_{i=1}^{\infty} \alpha_{i} e_{i} \text{ and } x= \beta e + \sum_{i=1}^{\infty} \beta_{i} e_{i}.
+    \end{equation*}
+It is easy to see that 
+\begin{equation*}
+    \lambda e = \sum_{i=1}^{\infty} \lambda e_{i} \text{ for any } \lambda \in \F.
+\end{equation*}
+Therefore, we have that
+\begin{equation*}
+    x=\alpha e + \sum_{i=1}^{\infty} \alpha_{i} e_{i} =  \sum_{i=1}^{\infty} \alpha e_{i} +  \sum_{i=1}^{\infty} \alpha_{i} e_{i}  = \sum_{i=1}^{\infty} \left( \alpha + \alpha_{i} \right)e_{i}
+\end{equation*}
+
+Likewise, we have that 
+\begin{equation*}
+    x=\sum_{i=1}^{\infty} \left( \beta + \beta_{i} \right) e_{i} .
+\end{equation*}
+
+The same argument at the end of item (b) shows that $\alpha + \alpha_{i} = \beta + \beta_{i}$ for each $i \in \N$. Taking limit $i\to \infty$, we have that $\alpha = \beta$. \footnote{It can be shown that if $\sum_{i=1}^{\infty} v_{n}$ converges then $\lim \norm{v_{n}} = 0$.} Hence, we are done.
+ \item We need to show that there is an isometric isomorphism between $c_{0}^{*}$ and $\ell ^{1} \left( \N \right)$. For $y \in \ell ^{1} \left( \N \right)$, consider the linear map $f_{y} : c_{0} \to \F$ given by $f_{y}(x) = \sum_{i=1}^{\infty} x_{i}y_{i}$ for each $y\in c_{0}$.
+
+     We will show that the linear map $T: \ell ^{1} \left( \N \right) \to c_{0}^{*}$ given by
+     \begin{align*}
+	 y \stackrel{T}{\longmapsto} f_{y}
+     \end{align*}
+     is an isometric isomorphism.
+
+ First, let $y\in \ell ^{1} \left( \N \right)$. For $x\in c_{0}$ with $\norm{x}_{c_{0}} \le 1$, we have by Holder's inequality that (one does not even need Holder :))
+     \begin{equation*}
+	 \abs{f_{y} (x)} \le \norm{x}_{c_{0}} \norm{y}_{\ell^{1}} \le \norm{y}_{\ell^{1}}
+     \end{equation*}
+
+     To show the reverse inequality, let us denote $y = \left( y_{n} \right)_{n\in \N}$. Now, define for each $n \in \N$,
+     \begin{equation*}
+	 \psi _{n} := \sum_{k=1}^{n} e^{-i \arg y_{k}} e_{k}.
+     \end{equation*}
+     It is easy to see that $\psi _{n}  \in c_{0}$ for each $n\in \N$ and $\norm{\psi_{n}}_{c_{0}}=1$. Now observe that for each $n\in \N$, we have that
+     \begin{align*}
+	 f_{y} \left( \psi_{n} \right) &= f_{y} \left(  \sum_{k=1}^{n} e^{-i \arg y_{k}} e_{k} \right) \\
+	 &= \sum_{k=1}^{n} e^{-i \arg y_{k}} f_{y}(e_{k})  \\
+	 &= \sum_{k=1}^{n} e^{-i \arg y_{k}} y_{k} \\
+	 &= \sum_{k=1}^{n} \abs{y_{k}}.
+     \end{align*}
+     Thus, we have that $\norm{f_{y}}_{c_{0}^{*}} \ge \sum_{k=1}^{n} \abs{y_{k}}$. Letting $n\to \infty$, we have that $\norm{f_{y}}_{c_{0}^{*}} \ge \sum_{k=1}^{\infty} \abs{y_{k}} = \norm{y}_{\ell ^{1}}$. This shows that $T$ is an isometry.
+
+     Let $f\in c_{0}^{*}$. We wish to show that there is some $y \in \ell ^{1}$ such that $f_{y} = f$. Let $y= \left( y_{n} \right)_{n\in \N}$ be the sequence defined by 
+     \begin{equation*}
+	 y_{n} = f\left( e_{n} \right) \text{ for all } n \in \N.
+     \end{equation*}
+     Note the same argument as before shows that $y \in \ell ^{1}$. Do you want me to be more explicit? There you go:
+Now, define for each $n \in \N$,
+     \begin{equation*}
+	 \psi _{n} := \sum_{k=1}^{n} e^{-i \arg y_{k}} e_{k}.
+     \end{equation*}
+     It is easy to see that $\psi _{n}  \in c_{0}$ for each $n\in \N$ and $\norm{\psi_{n}}_{c_{0}}=1$. Now observe that for each $n\in \N$, we have that
+     \begin{align*}
+	 f \left( \psi_{n} \right) &= f \left(  \sum_{k=1}^{n} e^{-i \arg y_{k}} e_{k} \right) \\
+	 &= \sum_{k=1}^{n} e^{-i \arg y_{k}} f(e_{k})  \\
+	 &= \sum_{k=1}^{n} e^{-i \arg y_{k}} y_{k} \\
+	 &= \sum_{k=1}^{n} \abs{y_{k}}.
+     \end{align*}
+     Thus, we have that $\norm{f}_{c_{0}^{*}} \ge \sum_{k=1}^{n} \abs{y_{k}}$. Letting $n\to \infty$, we have that $\norm{f}_{c_{0}^{*}} \ge \sum_{k=1}^{\infty} \abs{y_{k}} = \norm{y}_{\ell ^{1}}$. Didn't I tell you the same argument works?
+
+     Now, observe that $f(e_{i})=f_{y}(e_{i})$ for each $i\in \N$ and since they agree on a dense subset, namely $c_{00}$, we have that $f=f_{y}$ on $c_{0}$.
+
+ \item The same proof as above works \emph{mutatis mutandis}. 
+
+ \item We first show that closed unit ball of $c_{0}$ contains no extreme point. Equivalently, we need to show that every point of $c_{0}$ can be written as a convex combination of two distinct points in the closed unit ball of $c_{0}$.
+
+     Let $\left( x_{n} \right)$ be a sequence in the closed unit ball of $c_{0}$. Then select $N\in \N$ such that $\abs{x_{N}} < \frac{1}{2}$. Now, we define two sequences $\left( y_{n} \right)_{n\in \N}$ and $\left( z_{n} \right)_{n\in \N}$:
+     \begin{equation*}
+	 y_{n} =
+	 \begin{cases}
+	     x_{n} & n \ne N \\
+	     x_{N} + \frac{1}{2} &n =N
+	 \end{cases}
+     \end{equation*}
+
+     and 
+
+ \begin{equation*}
+	 y_{n} =
+	 \begin{cases}
+	     x_{n} & n \ne N \\
+	     x_{N} - \frac{1}{2} &n =N
+	 \end{cases}
+     \end{equation*}
+
+     It is easy to see that both $\left( y_{n} \right)$ and $\left( z_{n} \right)$ are in $c_{0}$ and both are distinct. Also note that $\left( x_{n} \right) = \frac{1}{2} \left( y_{n} \right) + \frac{1}{2} \left( z_{n} \right)$. So, no point of the closed unit ball of $c_{0}$ is an extreme point.
+
+     On the other hand, we show that the closed unit ball of $c$ contains a extreme point. Consider the point $x=\left( 1,1,1, \ldots \right)$. Clearly, $x$ is in the closed unit ball of $c$. We now show that that $x$ is an extreme point.
+
+     Assume the contrary that $x$ is not an extreme point. Then there exists two distinct sequences $y=\left( y_{n} \right)_{n\in \N}$ and $z=\left( z_{n} \right)_{n\in\N}$ such that 
+     \begin{equation*}
+	 x=\lambda y + \left( 1-\lambda \right)z
+     \end{equation*}
+     for some $\lambda \in [0,1]$.
+
+     Since $y$ and $z$ are distinct, select a $n_{0}\in N$ such $y_{n_{0}} \ne z_{n_{0}}$. We may assume that $y_{n_{0}} < z_{n_{0}}$ without loss of generality.
+
+     We now claim that $z_{n_{0}} =1$. If not, let $z_{n_{0}} < 1$. \footnote{Note that $z_{n_{0}}$ cannot be bigger than $1$ because $z$ lies in the closed unit ball of $c$.} Then we have that 
+     \begin{align*}
+	 1=x_{n_{0}} &= \lambda y_{n_{0}} + \left( 1-\lambda \right) z_{n_{0}} \\
+	 &< \lambda z_{n_{0}} + \left( 1-\lambda \right) z_{n_{0}} \\
+	 &= z_{n_{0}}.
+     \end{align*}
+     This contradicts the fact that $z_{n_{0}} < 1$. Hence $z_{n_{0}} = 1$.
+
+     From here, we can conclude that
+     \begin{align*}
+	 1 = \lambda y_{n_{0}} + \left( 1-\lambda \right) z_{n_{0}}
+	= \lambda y_{n_{0}} + \left( 1-\lambda \right) 1 
+	\leadsto \lambda = \lambda y_{n_0} .
+     \end{align*}
+
+     If $\lambda = 0$ then $y=z$ which is a contradiction. Otherwise if $\lambda \ne 0$ then $y_{n_0} =1$ which contradict the fact that $y_{n_{0}}\ne z_{n_{0}}$. This completes the proof.
     \end{enumerate}
-\end{proof}
+\end{proof} 

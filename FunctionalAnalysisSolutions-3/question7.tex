@@ -2,3 +2,37 @@
 \horz
 For each $y=(y_j)_{j\in\mathbb N}$ in $\ell^1(\mathbb N),$  consider the map $T_y : \ell^{\infty}(\mathbb N) \to \mathbb C$ defined by $$T_y(x) = \sum\limits_{j=1}^{\infty}x_jy_j,\,\,\,\, \,x\in \ell^{\infty}(\mathbb N).$$ Show that the map $y \to T_y$ is an isometry from $\ell^1(\mathbb N)$ into  $\big(\ell^{\infty}(\mathbb N)\big)^*$, but not surjective.
 \horz
+
+\begin{proof}[Solution]
+    Fix $y = \left( y_{j} \right)_{j\in \N} \in \ell ^{1} \left( \N \right)$. Consider the map $T_{y} : \ell ^{\infty} \left( \N \right) \to \C$ given by
+    \begin{equation*}
+	T_{y} x =\sum_{j=1}^{\infty} x_{j}y_{j}
+    \end{equation*}
+    for all $x=\left( x_{j} \right)_{j \in \N}  \in \ell ^{1}$. It is easy to show that this map is welldefined and that $\norm{T_{y}}_{(\ell ^{\infty})^{*}} \le \norm{y}_{\ell ^{1}}$ by Holder's inequality.
+
+    Also, we need to show that $\norm{y}_{\ell ^{1}} \le \norm{T_{y}}_{\left( \ell ^{\infty} \right)^{*}}$.      To show the reverse inequality, let us denote $y = \left( y_{n} \right)_{n\in \N}$. Now, define for each $n \in \N$,
+     \begin{equation*}
+	 \psi _{n} := \sum_{k=1}^{n} e^{-i \arg y_{k}} e_{k}.
+     \end{equation*}
+     It is easy to see that $\psi _{n}  \in c_{0}$ for each $n\in \N$ and $\norm{\psi_{n}}_{c_{0}}=1$. Now observe that for each $n\in \N$, we have that
+     \begin{align*}
+	 f_{y} \left( \psi_{n} \right) &= f_{y} \left(  \sum_{k=1}^{n} e^{-i \arg y_{k}} e_{k} \right) \\
+	 &= \sum_{k=1}^{n} e^{-i \arg y_{k}} f_{y}(e_{k})  \\
+	 &= \sum_{k=1}^{n} e^{-i \arg y_{k}} y_{k} \\
+	 &= \sum_{k=1}^{n} \abs{y_{k}}.
+     \end{align*}
+     Thus, we have that $\norm{f_{y}}_{(\ell \infty)^{*}} \ge \sum_{k=1}^{n} \abs{y_{k}}$. Letting $n\to \infty$, we have that $\norm{f_{y}}_{(\ell ^\infty)^{*}} \ge \sum_{k=1}^{\infty} \abs{y_{k}} = \norm{y}_{\ell ^{1}}$.
+    
+     If it happened that $y \to T_{y}$ was an isometric isomorphism then $\left( \ell ^{\infty} \left( \N \right) \right)^{*}$ would be separable since $\ell ^{1} \left( \N \right)$ is separable. Then $\left( \ell ^{\infty} \right) \left( \N \right)$ being separable would imply $\ell ^{\infty} \left( \N \right)$ would be separable. But $\ell ^{\infty} \left( \N \right)$ is not separable.\footnote{$X^{*}$ separable $\leadsto $ $X$ separable.}
+     
+     Here's how one can show that $\ell ^{\infty}$ is not separable. It is easy to see that the set of binary sequences in $\ell ^{\infty}$ is uncountable. If $\ell ^{\infty}$ was separable then there would be a sequence $\left\{ x_{n} : n\in \N \right\}$ such that $\overline {\left\{ x_{n} : n\in \N \right\}} =\ell ^{\infty}$. Now, if $y $ is a binary sequence, then there would be some $k(y) \in \N$ such that $\norm{y-x_{k(y)}}_{\infty} < \frac{1}{2}$. 
+
+     We claim that this map $y \mapsto k(y)$ is injective. Suppose not. Then for $y_{1}, y_{2}$ with $y_{1} \ne y_{2}$ we have $x_{y_{1}}=x_{y_{2}}$. Then we have that 
+     \begin{align*}
+	 1=\norm{y_{1} - y_{2}}_{\infty} &= \norm{y_{1} - x_{y_{1}} + x_{y_{2}} - y_{2}} & \text{adding zero}\\
+	 & \le \norm{y_1 - x_{y_{1}}}_{\infty} + \norm{y_{2} - x_{y_{2}}} & \text{triangle inequality} \\
+	 &< \frac{1}{2} + \frac{1}{2} \\
+	 &=1 & \text{Boom! } 1<1\text{!}
+     \end{align*}
+     \textit{Do I need to say more?}
+\end{proof}

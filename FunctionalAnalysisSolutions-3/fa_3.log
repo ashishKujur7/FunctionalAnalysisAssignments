@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.2.6)  22 FEB 2023 21:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.2.6)  24 FEB 2023 07:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -969,10 +969,10 @@ frm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 rm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on fa_3.pdf (17 pages, 367503 bytes).
+Output written on fa_3.pdf (17 pages, 368804 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
+ 307 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
  45 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

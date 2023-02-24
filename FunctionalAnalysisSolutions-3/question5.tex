@@ -3,17 +3,25 @@
 Let $T$ be a finite  rank  (say of rank $k$)  continuous linear operator from a Hilbert space $H$ into itself. Show that there exist a linearly independent set $\{x_1,\ldots,x_k\}$ and $\{y_1,\ldots,y_k\}$ in $H$ such that $$T= (x_1\otimes y_1) + \cdots + (x_k\otimes y_k).$$  
 \horz
 \begin{proof}[Solution]
-    We prove this by induction. Let $T : H \to H$ be a continuous linear operator on a Hilbert space $H$. Suppose that $\operatorname{rank} \left( T \right) = 1$. Then there exists a nonzero vector $y$ such that $\operatorname{Im} \left( T \right) = \operatorname{span} \left\{ y \right\}$. Thus for each vector $v$, there is some unique $\lambda _{v}$ such that $Tv= \lambda_{v} y$. Now consider the linear functional $f: H \to \F$ given by
-    \begin{equation*}
-	v \stackrel{f}{\mapsto} \lambda_{v}
-    \end{equation*}
-    It is easy to see that $f$ is a linear functional. Hence, by Riesz Representation therorem, we have that there is a unique vector $x \in H$ such that 
-    \begin{equation*}
-	f(v)=\ip{v,x} \text{ for each } v \in V.
-    \end{equation*}
-    Therefore, we have that 
-    \begin{equation*}
-	Tv= \lambda_{v} y = f(v)x = \ip{v,x}y \text{ for each } v\in V\text{.}
-    \end{equation*}
-    Now for any $x,y\in V$, define $x\otimes y : V \to V$ by $\left( x\otimes y \right) \left( v \right) = \ip{v,x} y$ for each $v\in V$.
+    Let $k\in\text{ran} T$. Then $k=Tf$ for some $f$, i.e. $k=\lambda g$, where $\lambda=\langle f,h\rangle$. So every element in $\text{ran}\,T$ is a scalar multiple of $g$. Thus, $\text{ran}\,T$ has a basis consisting of $\{g\}$, i.e. it has dimension $1$. 
+
+Now assume that $T$ is finite rank. Let $g_1',\ldots,g_n'$ be an orthonormal basis of $\text{ran}\,T$. Then, for every $f\in H$, $Tf=\sum_j\lambda_j(f)\,g_j'$, with the coefficients $\lambda_1(f),\ldots,\lambda_n(f)$ uniquely determined for for each $f$. So, for each $j$, the map $f\mapsto\lambda_j(f)$ is a linear functional on $H$. Note that
+$$
+|\lambda_j(g)|\leq\left(\sum_{k=1}^n|\lambda_k(f)|^2\right)^{1/2}=\|Tf\|\leq\|T\|\,\|f\|,
+$$
+so every $\lambda_j$ is a bounded functional. By the Riesz Representation Theorem, there exist vectors $e_1',\ldots,e_n'$ such that $\lambda_j(f)=\langle f,e_j'\rangle$. So
+$$
+Tf=\sum_{j=1}^n\langle f,e_j'\rangle\,g_j',\ \ \ \ \ f\in H.
+$$
+
+Now, using Gram-Schmidt, there exist $e_1,\ldots,e_n$, orthonormal, such that 
+$$
+e_k'=\sum_{j=1}^k\lambda_{kj}e_j
+$$
+for coefficients $\{\lambda_{kj}\}_{k=1,\ldots,n; j=1,\ldots,k}$ (note that these are not the equalities from Gram-Schmidt, but rather the *inverse* form, where we express the old vectors in terms of the new orthonormal ones). Then 
+$$
+Tf=\sum_{k=1}^n\langle f,e_k'\rangle\,g_k'=\sum_{k=1}^n\langle f,\sum_{j=1}^k\lambda_{kj}e_j\rangle\,g_k'=\sum_{k=1}^n\sum_{j=1}^k\lambda_{kj}\langle f,e_j\rangle\,g_k'=\sum_{j=1}^n\langle f,e_j\rangle\,\left(\sum_{k=j}^n\lambda_{kj}g_k'\right).
+$$
+Letting $g_j=\sum_{k=j}^n\lambda_{kj}g_k'$, $j=1,\ldots,n$, we get the desired expression.
 \end{proof}
+This solution was borrowed from \href{https://math.stackexchange.com/q/3149459/151611}{here}!

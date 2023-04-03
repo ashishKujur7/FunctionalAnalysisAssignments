@@ -1,0 +1,27 @@
+\section{Question 4}
+\horz
+Let $\{ e_n:n\in\mathbb N\}$ be the standard Schauder basis for the Banach space $\ell^p(\mathbb N)$ where $1 \leqslant p < \infty.$  Show that $e_n \to 0$ in the weak topology of $\ell^p(\mathbb N)$ for every $p >1.$ But for $p=1,$ the sequence $e_n$ does not converges to $0$ in the weak topology of $\ell^1(\mathbb N).$
+\horz
+\begin{proof}
+    First, we deal with the case when $1<p < +\infty$. It can be shown that
+    \begin{equation*}
+	(\ell ^{p} \left( N \right))^{*} = \left\{ L_{y} : y \in \ell ^{q} \left( \N \right) \right\}
+    \end{equation*}
+    where $L_{y}(x)=\sum_{i=1}^{\infty} x_{i}y_{i}, x\in \ell ^{q} \left( \N \right)$. Note that for each $y\in \ell ^{q} \left( \N \right)$ with $1 \le q < \infty$, we have that $y_{i} \to 0$ as $i \to \infty$. This is because $\sum_{i=1}^{\infty} \abs{y_{i}}^{q} < \infty$ for $y \in\ell^{q} \left( \N \right)$. 
+
+    Now, let $y\in \ell ^{q} \left( \N \right)$. We have that 
+    \begin{equation*}
+	L_{y} \left( e_{n} \right) = y_{n} \to 0 \text{ as } n \to \infty.
+    \end{equation*}
+    This shows that $\left( e_{n} \right) $ converges to $0$ in the weak topology.
+
+    Now, consider the case where $p=1$. Then we have
+    \begin{equation*}
+	\left( \ell ^{1} \left( \N \right) \right)^{*} = \left\{ L_{y} : y \in \ell ^{\infty} \left( \N \right) \right\}
+    \end{equation*}
+    where $L_{y}$ is as specified in the previous case. Let $y=\left( 1,1,1,\ldots \right)$. Then we have that
+    \begin{equation*}
+	L_{y} \left( e_{n} \right) = 1
+    \end{equation*}
+    for each $n \in \N$. Hence, we have that $(e_{n})$ does not converge to $0$ in the weak topology.
+\end{proof}

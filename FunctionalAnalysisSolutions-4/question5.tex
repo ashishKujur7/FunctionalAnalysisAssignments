@@ -1,0 +1,23 @@
+\section{Question 5}
+\horz
+Let $T : \ell^2(\mathbb N) \to \ell^2(\mathbb N)$ be the linear map given by $T \Big((x_j)_{j\in\mathbb N}\Big) = \Big ( (\frac{x_j}{j})_{j\in \mathbb N}\Big).$ 
+
+\begin{itemize}
+\item[1.] Show that $T$ is continuous and injective.
+\item[2.] Consider the map $T^{-1} : range (T) \to \ell^2(\mathbb N)$ given by $T^{-1}(Tf) =f$ for $f\in \ell^2(\mathbb N).$ Show that $T^{-1}$ is not continuous.
+\item[3.] Conclude that $range (T)$ is not closed in $\ell^2(\mathbb N).$  
+\end{itemize}
+\horz
+
+\begin{proof}[Solution]
+    \begin{enumerate}
+	\item This is clear from Holder's inequality.
+	\item Let $k > 0$. Select $N \in \N$ such that $k < N$. Consider the sequence
+	    \begin{align*}
+		N=\norm{T^{-1}\left( \frac{e_{N}}{N} \right)} > k \norm{e_{N}}
+	    \end{align*}
+    This shows that $T$ is discontinuous.
+\item If $\im T$ was closed then the Banach isomorphism theorem would tell us that $T^{-1} : \im T \to \ell ^{2} \left( \N \right)$ is continuous which would contradict item 2.
+    
+    \end{enumerate}
+\end{proof}

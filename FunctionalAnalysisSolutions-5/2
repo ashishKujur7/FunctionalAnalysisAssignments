@@ -1,0 +1,16 @@
+\section{Question 5}
+\horz
+Let $M$ be a norm closed subspace of a normed linear space $X.$ Show that $M$ is also closed in the weak topology of $X.$
+\horz
+
+\begin{proof}
+    Let $M$ be a strongly closed subspace of $X$. We wish to show that it is weakly closed. To do so, we will show that $X \setminus M$ is weakly open.
+
+    Let $x \in X \setminus M$. We will be done if we show that there is a weakly open set $U$ such that $x\in U \subset M$.
+
+    Recall a result about metric spaces: distance between a closed set and a compact set which are disjoint is strictly positive. Since $\left\{ x \right\}$ is compact and $M$ is closed, we have that the distance $d$ between the point $x$ and $M$ is strictly positive.
+
+    We claim that there is linear functional $f\in X^{*}$ such that $\norm{f}_{X^{*}} =1$, $f\left( M \right)=0$ and $f\left( x \right)=d$.
+    
+    For the timebeing, let us assume this claim. Let $f\in X^{*}$ be such a functional. Then we have that $f^{-1}\left( \left( d/2 , \infty \right) \right)$ is weakly open (because weak topology is the smallest topology which makes every linear functional continuous).
+\end{proof}

@@ -1,0 +1,23 @@
+\section{Question 1}
+\horz
+
+Let $(V,\|\cdot\|_1)$  and $(V,\|\cdot\|_2)$ be two Banach spaces. Suppose there exist a $c>0$ such that $\|x\|_1 \leqslant c \|x\|_2$ for every $x\in V.$ Then show that the two norms $\|\cdot\|_1$ and $\lVert \cdot \rVert_2$ are equivalent.
+
+\horz
+
+\begin{proof}
+    First, we prove that $I : \left( V, \norm{\cdot} _{2} \right) \to \left( V, \norm{\cdot}_{1} \right)$ is continuous. To do so , let $x \in V$. Then
+    \footnote{Yes, I know that there was nothing to show!}
+    \begin{align*}
+	\norm{Ix}_1 &= \norm{x}_{1} \\
+	&\le c \norm{x}_{2}. & \text{(by hypothesis)}
+    \end{align*}
+
+    Since $I$ is a bounded linear operator, we have that it is invertible by the inverse mapping theorem. Thus $I : \left( V, \norm{\cdot}_{1} \right) \to \left( V, \norm{\cdot}_{2} \right)$ is bounded. Thus, we have that 
+    \begin{align*}
+	\norm{x}_{2} &= \norm{I(Ix)}_{2} \\
+	&\le \norm{I} \norm{Ix}_{1} & \left(\text{viewing "first" I as a mapping from } \left( V, \norm{\cdot}_{2} \right) \text{ to } \left( V, \norm{\cdot}_{1} \right) \right) \\
+	&= \norm{I} \norm{x}_{1}
+    \end{align*}
+    Hence, we have that the both norms are equivalent. 
+\end{proof}

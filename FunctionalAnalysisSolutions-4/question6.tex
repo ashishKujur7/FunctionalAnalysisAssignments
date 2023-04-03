@@ -1,0 +1,15 @@
+\section{Question 6}
+\horz
+Suppose $\varphi $ is a Borel measurable function on $[0,1]$ such that $\varphi f \in L^2[0,1]$ for every $f\in L^2[0,1].$ Consider the map $M_{\varphi} : L^2[0,1] \to L^2[0,1]$ defined by $M_{\varphi}(f) = \varphi f$ for every $f\in L^2[0,1].$ Prove that $M_{\varphi}$ is continuous linear transformation and $\varphi \in L^{\infty}[0,1].$ 
+\horz
+\begin{proof}
+    Let $\varphi$ be a Borel measurable function. Since $\varphi f \in L^{2} [0,1]$ for each $f\in L^2 [0,1]$, we have by taking $f=1$ that $\varphi \in L^{2} [0,1]$. Consider the sequence of functions given by $\varphi_{n } = \varphi \chi_{\left\{ \abs{\varphi } \le n \right\}}$. Now note that $|\varphi_{n}-\varphi| \le \abs{\varphi}$ on $[0,1]$. Also, note that $\abs{\varphi_{n}} \le n$ on $[0,1]$ so $M_{\varphi_{n}} : L^{2} [0,1] \to L^{2} [0,1]$ defined by $M_{\varphi_{n}} (f) = \varphi_{n} f$ for every $f\in L^{2} [0,1]$ is continuous.
+
+    We now show that $M_{\varphi_{n}}(f) \to M_{\varphi} \left( f \right)$ in $2$-norm. Now, $\abs{\varphi_{n} -\varphi}^{2} \abs{f}^{2} \le \abs{\varphi f}^{2}$ on $[0,1]$. By Dominated Convergence Theorem, we have that 
+    \begin{equation*}
+	\lim_{n\to \infty} \int_{0}^{1} \abs{\varphi_{n} -\varphi}^{2} \abs{f}^{2} dt = 0
+    \end{equation*}
+    as $\abs{\varphi_{n} - \varphi } \to 0$ pointwise.
+
+    By the \href{http://mathonline.wikidot.com/corollaries-to-the-uniform-boundedness-principle}{Corollary 2 in this webpage}, we conclude that $M_{\varphi}$ is continuous.
+\end{proof}

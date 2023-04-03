@@ -1,0 +1,33 @@
+\section{Question 3}
+\horz
+Let $(X,\|\cdot\|)$ be a Banach space with a Schauder basis, say $\{v_j: j\in\mathbb N\}.$ Define a new norm on $X$ in the following manner :
+For any $x\in X$, there exist  unique scalars $\{c_i(x): i\in\mathbb N\}$ such that $x= \sum_{i=1}^{\infty} c_i(x) v_i.$ Now consider
+\begin{align*}
+\|x\|_n := \sup\limits_{k} \Big\{ \|\sum\limits_{i=1}^k c_i(x) v_i\|\Big \}
+\end{align*}
+Show that $\|\cdot\|_n$ is indeed a norm on $X$  and the two  norms $\|\cdot\|_n$ and $\|\cdot\|$ are equivalent.
+\horz
+
+\begin{proof}[Solution]
+    The first question is whether $\norm{\cdot}_{n}$ is well defined. Let's proceed to show that. Let $x\in X$. Then there exists scalars $\left\{ c_{i}\left( x \right) : i \in \N \right\}$ such that 
+    \begin{align*}
+    x &= \lim_{k\to \infty} \sum_{i=1}^{k} c_{i} \left( x \right) v_{i} \\
+    \leadsto \norm{x} &= \norm{\lim_{k\to \infty} \sum_{i=1}^{k} c_{i} \left( x \right) v_{i} } \\
+    &= \lim_{k\to \infty} \norm{\sum_{i=1}^{k} c_{i} \left( x \right) v_{i} } .
+    \end{align*}
+    Since $ \norm{\sum_{i=1}^{k} c_{i} \left( x \right) v_{i} }$ is convergent and hence is bounded. Thus the norm $\norm{\cdot}_{n}$ is well defined.  
+
+    It is easy to see that $\norm{\cdot}_{n}$ is a norm on $X$. Let $x\in X$ be arbitrary. Since $\left\{ v_{j} : j\in \N \right\}$ is a Schauder basis, there exists unique scalars $\left\{ c_{i} \left( x \right) : i\in \N \right\}$ such that 
+    \begin{align*}
+	x=\sum_{i=1}^{\infty} c_{i} \left( x \right) v_{i}
+    \end{align*}
+    Observe that for each $k\in \N$, we have that 
+    \begin{equation*}
+	\norm{\sum_{i=1}^{k} c_{i}\left( x \right) x_{i}} \le \norm{x}_{n}.
+    \end{equation*}
+    Letting $k\to \infty$, we have that
+    \begin{equation*}
+	\norm{x} \le \norm{x}_{n}.
+    \end{equation*}
+    In view of Question 1 of this Assignment, we are done.
+\end{proof}

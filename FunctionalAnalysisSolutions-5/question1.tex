@@ -1,0 +1,54 @@
+\section{Question 1}
+\horz
+Suppose $M$ and $N$ are two topologically complimentary closed subspace of a Banach space $(X,\|\cdot\|_X).$  Now consider  $M\oplus_1 N,$ the external direct sum, defined in the following way )
+\begin{align*}
+M\oplus_1 N = \{(m,n): m\in M,n\in N\},\,\|(m,n)\|_1= \|m\|_X+\|n\|_X.
+\end{align*}
+\begin{itemize}
+\item[(a)] Show that $M\oplus_1 N$ is a Banach space w.r.t the norm $\|\cdot\|_1$ mentioned above.
+\item[(b)] Show that $X$ is isomorphic to $M\oplus_1 N.$ 
+\item[(c)] Show that the quotient space $X/M$ is isomorphic to the Banach space $N.$
+\end{itemize}
+
+\horz
+\begin{proof}[Proof of item (a)]
+    We proceed to prove (a). Let $\left( \left( m_{k}, n_{k} \right) \right)_{k\in \N}$ be a Cauchy sequence in $M \oplus _{1} N$. We show that $\left( m_{k} \right)$ is Cauchy in $X$. Consider the following:
+    \begin{align*}
+	\norm{m_k - m_l}_{X} \le \norm{\left( m_{k}, n_{k} \right) - \left( m_{l}, n_{l} \right)}_{1}.
+    \end{align*}
+    Now since $\left( \left( m_{k}, n_{k} \right) \right)$ is Cauchy, we have that $\left( m_{k} \right)$ is Cauchy in $X$. Since $X$ is a Banach space, we have that $\left( m_{k} \right)$ converges to some $m\in M$ as $M$ is closed. Likewise it can be shown that $\left( n_{k} \right)$ converges to some $n \in N$. We now show that $\left( \left( m_{k}, n_{k} \right) \right)$ converges to $\left( m,n \right)$ in $M\oplus _{1}  N$. Consider the following:
+    \begin{equation*}
+	\norm{\left( m_{k}, n_{k} \right) - \left( m,n \right)} = \norm{m_{k} -m }_{X} + \norm{n_{k} - n}_{X} 
+    \end{equation*}
+    Since $\left( m_{k} \right)$ converges to $m$ and $\left( n_{k} \right)$ converges to $n$, we are done.
+\end{proof}
+
+\begin{proof}[Proof of item (b)]
+    To show that $X$ is isomorphic to $M \oplus _{1} N$, consider the map $T: M \oplus _{1} N \to X$ given by
+    \begin{equation*}
+	T(m,n)=m+n
+    \end{equation*}
+    for every $m\in M$ and every $n\in N$. First, we show that $T$ is a normed linear space isomorphism, that is, both $T$ and $T^{-1}$ are bounded linear operators. 
+    It is immediate that $T$ is bijective and linear. Since the projection maps $m+n \to m$ and $m+n \to n$ are continuous, there are some constant $\mu$ and $\nu$ such that $\norm{m}_{X} \le \mu \norm{m+n}_{X}$ and  $\norm{n}_{X} \le \nu \norm{m+n}_{X}$. Now, let $m\in M$ and $n\in N$. Then
+    \begin{align*}
+	\norm{T\left( m,n \right)}_{X} &= \norm{m+n}_{X} \\
+	&\le \norm{m}_{X} + \norm{n}_{X} \\
+	&=\norm{\left( m,n \right)}_{1}
+    \end{align*}
+and
+\begin{align*}
+    \norm{T^{-1} (m+n)}_{1} &= \norm{\left( m,n \right)}_{1} \\
+    &= \norm{m}_{1} + \norm{n}_{1} \\
+    &\le \left( \mu + \nu \right) \norm{m+n}_{X}
+\end{align*}
+This shows that $X$ is isomorphic to $M\oplus _{1} N$.
+\end{proof}
+\begin{proof}[Proof of item (c)]
+    Let $P_{N} : X \to N$ be the projection of $X$ into $N$. Since $P_{N}$ is onto, by the first isomorphism theorem for vector spaces, we have that $X/M \cong N$. It remains to show that map $\left[ x \right]_{M} \mapsto P_{N}(x)$ and its inverse is continuous (note this is the isomorphism given by the first isomorphism theorem). We show that the map $P_{N} \left( x \right) \mapsto [x]_{M}$ is continuous. Let $x\in X$. Suppose $x=m+n$. Then we have that $P_{N}(x)=n$. Then
+    \begin{align*}
+	\norm{\left[ x \right]_{M}} &\le \norm{x-m} & \text{(by definition of quotient norm)} \\
+	&= \norm{n} \\
+	&= \norm{P_{N}(x)}_{X}
+    \end{align*}
+    This shows that the aforementioned map is continuous and bijective, by the Banach isomorphism theorem, we are done.
+\end{proof}

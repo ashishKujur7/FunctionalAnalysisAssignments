@@ -1,0 +1,29 @@
+\section{Question 2}
+\horz
+Let $X$ and $Y$ be two Banach spaces and  $T: X \rightarrow Y$ be a continuous linear transformation. Show that there exist a constant $c>0$ such that $\|Tx\| \geqslant c \|x\|$ for all $x\in X$ if and only if $\ker T=\{0\}$ and $\im (T)$ is closed.
+
+\horz
+
+\begin{proof}[Solution]
+    $\left( \Longrightarrow \right)$ Suppose that there is a constant $c>0$ such that $\norm{Tx} \ge c\norm{x}$ for all $x\in X$. 
+
+    First, let us show that $\ker T = \left\{ 0 \right\}$. Let $x\in \ker T$. Then $Tx=0$. Then we have that $0=\norm{Tx}\ge c \norm{x}$ and hence $x=0$. 
+
+    To show that that the image of $T$ is closed, let $\left( Tx_{n} \right)_{n\in \N}$ be a sequence converging to some $y \in Y$. We need to show that $y=Tx$ for some $x\in X$. 
+
+    Since $\left( Tx_{n} \right)$ is convergent, it is Cauchy in $Y$. Therefore, we have that 
+    \begin{align*}
+	\norm{x_{n} -x_m} &\le \frac{1}{c} \norm{Tx_{n} - Tx_{m}}
+    \end{align*}
+    for all $m,n \in \N$. This shows that $\left( x_{n} \right)_{n\in \N}$ is Cauchy in $X$. Since $X$ is Banach, we have that $\left( x_{n} \right)_{n\in\N}$ converges to some $x\in X$. By continuity, we have that $\left( Tx_{n} \right)_{n\in \N}$ converges to $Tx$. By uniqueness of limits, we have that $Tx=y$.
+
+    $\left( \Longleftarrow \right)$ If $X=\left\{ 0 \right\}$ then the result is trivial. Suppose that $X \ne \left\{ 0 \right\}$. Since $T: X \to Y$ is injective, we consider the map $T^{-1} : \im T \to X$. Note that $T$ is bounded linear transformation, thus, $T^{-1}$ is a bounded linear transformation by the inverse mapping theorem. (Quick remark: $\im T$ is Banach by virtue of being closed).
+
+    Thus, we have that
+    \begin{align*}
+	\norm{x} &= \norm{T^{-1} \left( Tx \right)} \\
+	&\le \norm{T^{-1}} \norm{Tx}
+    \end{align*}
+    for any $x\in X$.
+    We will be done if we show that $\norm{T^{-1}} \ne 0$. Since $X$ is nonzero, $\im T$ is nonzero. Select a nonzero vector $y\in \im (T)$ such that $\norm{y} \le 1$. Thus, we have that $\norm{T^{-1}} \ge \norm{T^{-1} \left( y \right)}$. Hence $y=Tx$ for some nonzero $x\in X$. Thus, $\norm{T^{-1}} \ge \norm{x} >0$. This completes the proof.
+\end{proof}

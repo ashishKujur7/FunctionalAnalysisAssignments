@@ -1,0 +1,8 @@
+\section{Question 5}
+\horz
+Let $M$ be a norm closed subspace of a normed linear space $X.$ Show that $M$ is also closed in the weak topology of $X.$
+\horz
+
+\begin{proof}
+    Let $\left( x_{n} \right)$ be a sequence in $M$ converging weakly to $x\in X$.
+\end{proof}

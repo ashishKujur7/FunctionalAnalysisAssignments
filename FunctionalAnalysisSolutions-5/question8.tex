@@ -1,0 +1,32 @@
+\section{Question 8}
+\horz
+
+Let $V$ be a vector space over $\mathbb F,$  where $(\mathbb F = \mathbb R$ or  $\mathbb C).$ Suppose $g,f_1,f_2,\ldots,f_k$ are non zero linear functional on $V$ satisfying 
+\begin{align*}
+\bigcap _{j=1}^k \ker f_j \subseteq \ker g.
+\end{align*}
+Then show that $g$ belong to span$\{f_1,f_2,\ldots,f_k\}.$
+
+\horz
+
+\begin{proof}
+    We proceed by induction. First suppose that $\ker f \subset \ker g$. We show that $g = \lambda f$ for some $\lambda \in \F$. 
+
+    Observe that if $\ker g= V$ then $g=0 =0f$ and we are done. Suppose not. Then we can select $v_{0} \in V$ such that $g\left( v_{0} \right) = 1$. Then $f\left( v_{0} \right) \ne 0$ for otherwise $v_{0} \in \ker f$ which would imply that $g\left( v_{0} \right) = 0$ as $\ker f \subset \ker g$. Define $\lambda_{1} =  \frac{1}{f\left( v_{0} \right)}$.
+
+    We have that $V=\ker f \oplus \operatorname{span} \left\{ v_{0} \right\}$. We have that $v= v_{f} + \lambda v_{0}$ for some $\lambda \in \F$.
+
+    Therefore, we have that
+    \begin{align*}
+	g\left( v \right) &= g\left( v_{f} + \lambda v_{0} \right) \\
+	&= 1
+    \end{align*}
+
+    Also, note that
+    \begin{align*}
+	\lambda_{1} f\left( v \right) &= \lambda _{1} \lambda f\left( v_{0} \right)\\
+	&= \lambda
+    \end{align*}
+
+    This shows the theorem is true for the case $n=1$.
+\end{proof}

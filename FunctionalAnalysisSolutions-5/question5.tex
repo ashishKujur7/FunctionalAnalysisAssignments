@@ -1,0 +1,27 @@
+\section{Question 5}
+\horz
+Let $M$ be a norm closed subspace of a normed linear space $X.$ Show that $M$ is also closed in the weak topology of $X.$
+\horz
+
+\begin{proof}
+    Let $M$ be a strongly closed subspace of $X$. We wish to show that it is weakly closed. To do so, we will show that $X \setminus M$ is weakly open.
+
+    Let $x \in X \setminus M$. We will be done if we show that there is a weakly open set $U$ such that $x\in U \subset X \setminus M$.
+
+    Recall a result about metric spaces: in a metric space, distance between a closed set and a compact set which are disjoint is strictly positive. Since $\left\{ x \right\}$ is compact and $M$ is closed, we have that the distance $d$ between the point $x$ and $M$ is strictly positive.
+
+    We claim that there is linear functional $f\in X^{*}$ such that $f\left( M \right)=0$ and $f\left( x \right)=d$.
+    
+    For the timebeing, let us assume this claim. Let $f\in X^{*}$ be such a functional. Then we have that $U:=f^{-1}\left( \left( d/2 , \infty \right) \right)$ is weakly open (because weak topology is the smallest topology which makes every linear functional continuous), $a \in U$ and $U  \subset X \setminus M$. This shows that $X \setminus M$ is weakly open and hence $M$ is weakly closed.
+
+    We now proceed to prove that claim. Consider the subspace: 
+    \begin{equation*}
+    N:= \left\{ \lambda x + m : \lambda \in \F, m \in M \right\}
+\end{equation*}
+of $X$. We now define a continuous linear functional $f_{N}$ on $N$ and extend it to $X$ via Hahn Banach. So, consider the linear functional $f_{N} : N \to \F$ given by $f_{N} \left( \lambda x + m \right) = \lambda d$. It is easy to see that this functional is well defined and linear. We now show that $\norm{f_{N}}_{N^{*}} \le 1$. Let $\lambda \in \F$ and $m\in M$. We have that
+\begin{align*}
+\norm{\lambda x + m} &= \abs{\lambda} \norm{x - \left( - \frac{m}{\lambda} \right)}
+    \ge \abs{\lambda}d = \norm{f_{N} \left( \lambda x + m \right)}
+\end{align*}
+This shows that $f_{N}$ is continuous. Hence, by Hahn Banach, we are done.
+\end{proof}

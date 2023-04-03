@@ -1,0 +1,25 @@
+\section{Question 2}
+\horz
+Let $H$ be a Hilbert space with an orthonormal basis $\{e_j: j\in \mathbb N\}.$ Consider the set $$A= \{e_k+ ke_l : k < l,\, k,l\in\mathbb N , \}.$$ Show that $0$ belongs to the weak closure of $A.$ Also show that there is no sequence in $A$ which converge weakly to $0.$
+\horz
+
+\begin{proof}
+    Recall the fact that in a topological space, we have that $x \in \overline A$ if there is a sequence $\left( x_{n} \right)_{n \in \N}$ in $A$ converging to $x\in A$.
+     
+    For each $k \in \N$, we have that the sequence $\left( e_{k} + k e_{l} \right)_{l\ge k}$ converges to $e_{k}$. Thus, we have that $e_{k} \in \overline{A}^{w}$. Also, $\left( e_{k} \right) \in \overline{A}^{w}$ converges to $0$. Therefore, we have that $0 \in \overline{A}^{w}$. 
+
+    Let $(\tilde{e}_n)$ be a sequence in $A$ converging to $0$. Then $\tilde{e}_{n} = e_{k_{n}} + k_{n} e_{l_{n}}$ for some $k_{n}, l_{n} \in \N$ with $k_{n}< l_{n}$. Then $\left( \tilde{e}_{n} \right)$ must be norm bounded. Let $M>0$ such that $\norm{\tilde{e}_{n}}\le M$ for each $n\in \N$.
+
+    We claim that $\left\{ k_{n} : n\in \N \right\}$ is finite. This is easy to see:
+    \begin{align*}
+	M &\ge \norm{k_n e_{l_n} + e_{k_n}} \\
+	&\ge \abs{k_n \norm{e_{l_n}} - \norm{e_{k_n}}} \\
+	&\ge k_{n}-1
+    \end{align*}
+    for each $n\in \N$.
+
+
+    Since the aforementioned set is finite, we may let $\left\{ k_{n} : n \in \N \right\} = \left\{ k_{n_{1}}, \ldots , k_{n_{l}} \right\}$ for some $n_{1}, n_{2}, \ldots , n_{l} \in \N$.
+    It is a consequence of Riesz Representation theorem that in a Hilbert Space, $x_{n} \to x$ weakly iff $\ip{x_{n}, y} \to \ip{x,y}$ for each $y\in H$. We use this to achieve a contradiction.
+    Now, let $y=e_{k_{n_{1}}} + e_{k_{n_{2}}} + \ldots + e_{k_{n_{l}}}$. It can be seen that $\ip{\tilde{e}_{n} , y} \ge 1$ for each $n\in \N$ and cannot converge to $0$ as $n\to \infty$.
+\end{proof}

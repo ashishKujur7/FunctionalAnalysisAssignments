@@ -1,0 +1,23 @@
+\section{Question 3}
+\horz
+Let $H$ be a Hilbert space. Suppose $\{x_n\}_{n\in\mathbb N}$ is a sequence of vector in $H$ which converges weakly to a vector $x$ in $H$ and $\|x_n\| \to \|x\|$ as $n\to \infty.$ Then show that $\|x_n-x\|\to 0$ as $n\to\infty.$ 
+\horz
+
+\begin{proof}
+    Let $\left( x_{n} \right)$ be a sequence in $H$ converging to $x\in H$ and furthermore suppose that $\norm{x_{n}} \to \norm{x}$ as $n\to \infty$. We wish to show that $x_{n} \to x$ strongly.
+
+    Since $x_{n} \to x$ weakly, we have that $\ip{x_{n}, y} \to \ip{x, y}$ for each $y\in H$ by the definition and Riesz Representation theorem.
+    Thus, we have that $\ip{x_{n},x } \to \norm{x}^{2}$ in particular.
+
+    Now, 
+    \begin{align*}
+	\norm{x_{n} -x}^{2} &= \norm{x_{n}}^{2} - 2 \Re \ip{x_{n}, x} + \norm{x}^{2}.
+    \end{align*}
+    Taking limits both sides, we have that
+    \begin{align*}
+	\lim_{n\to \infty} \norm{x_{n}-x}^{2} = 0
+    \end{align*}
+    because $\norm{x_{n}}^{2} \to \norm{x}^{2}$ and $\ip{x_{n}, x}\to \norm{x}^{2}$.
+
+    This completes the proof as square root function is continuous.
+\end{proof}

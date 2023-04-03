@@ -1,0 +1,33 @@
+\section{Question 4}
+\horz
+
+Let $(X,\|\cdot\|)$ be a Banach space with a Schauder basis, say $\{v_j: j\in\mathbb N\}.$ Thus for any $x\in X$, there exist  unique scalars $\{c_i(x): i\in\mathbb N\}$ such that $x= \sum_i c_i(x) v_i.$ Now consider the family of linear functional $P_i : X \to \mathbb F$ defined by $P_i(x) = c_i(x)$ for every $x\in X.$ Show that  $P_i$ is a continuous linear functional on $X$ for each $i\in \mathbb N.$
+
+\horz
+
+\begin{proof}
+    By the uniqueness part of the Schauder basis, it is easy to see that each $P_{i} : X \to \F$ is indeed an linear functional. We are left to show that it is continuous. 
+
+    We use the previous problem to complete this problem. Since $\norm{\cdot}$ and $\norm{\cdot}_{n}$ is equivalent, there exists constants $\alpha_1 , \alpha_2 > 0$ such that 
+    \begin{equation*}
+	\alpha_{1} \norm{x}_{n} \le \norm{x} \le \alpha_{2} \norm{x}_{n}
+    \end{equation*}
+    for each $x\in X$.
+
+%    We first show that $P_{1} : X \to \F$ is continuous. Consider the following:
+ %   \begin{align*}
+%	\abs{c_{1} (x)} \norm{v_{1}} &= \norm{c_{1} \left( x \right) v_{1}} \\
+%	&\le \norm{x}_{n} \\
+%	&\le \frac{1}{\alpha_{1}} \norm{x} \\
+%	\leadsto \abs{c_{1} \left( x \right)} &\le \frac{1}{\alpha_{1} \norm{v_{1}}} \norm{x}.
+%    \end{align*}
+%    This shows that $c_{1} (x)$ is continuous.
+
+    We show that the map $\varphi_{k} : \left( V, \norm{\cdot} \right) \to \left( V, \norm{\cdot} \right)$ given by $\varphi _{k} \left( x \right) = \sum_{i=1}^{k} c_{i} \left( x \right) v_{i}$ is continuous. Let $x \in X$ and consider the following:
+    \begin{align*}
+	\norm{\varphi_{k} \left( x \right)} &= \norm{\sum_{i=1}^{k} c_{i} \left( x \right) v_{i}} \\
+	&\le \norm{x}_{n} \\
+	&\le \frac{1}{\alpha_{1}} \norm{x}.
+    \end{align*}
+    This shows that $\varphi_{k}$ is continuous for each $k\in \N$. Define $\varphi_{0} (x)=0$ for each $x\in X$. Notice that now, $P_{k} = \frac{1}{\norm{v_{k}}} \norm{\varphi_{k} - \varphi_{k-1}}$ for each $k\in \N$. By continuity of norm and $\varphi_{k}$'s, we are done.
+\end{proof}

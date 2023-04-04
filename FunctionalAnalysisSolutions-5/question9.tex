@@ -6,5 +6,30 @@ Let $X$ be an infinite dimensional normed linear space and $S= \{ x\in X : \|x\|
 \horz
 
 \begin{proof}
-    We proceed to show that if $y \in X$ with $\norm{y} \le 1$ and $U$ is a weak neighbourhood of $y$ then $U \cap S \ne \emptyset$.
+    We proceed to show that if $y \in X$ with $\norm{y} \le 1$ and $U$ is a weak neighbourhood of $y$ then $U \cap S \ne \emptyset$. 
+
+    Since $U$ is a nonempty set, we claim that there exists $x_{0}\ne 0$ such that $y + \operatorname{span} \left\{ x_{0} \right\} \subset U$. Since $U$ is a weakly open set, there exists $f_{1}, f_{2}, \ldots, f_{n} \in X^{*}$ and $\varepsilon > 0$ such that 
+\begin{align*}
+    \bigcap_{i=1}^{n} \left\{ x \in X : \abs{f_{i}\left( y-x \right)} < \varepsilon \right\} \subset U.
+\end{align*}
+We show that there is an $x_{0} \in X \setminus \left\{ 0 \right\}$ such that $f_{1} \left( x_{0} \right) = f_{2}\left( x_{0} \right) = \ldots = f_{n} \left( x_{0} \right) = 0$. If there are none, we consider the map
+\begin{align*}
+    X &\to \C ^{n} \\
+    x &\mapsto \left( f_{1} \left( x \right), f_{2} \left( x \right), \ldots, f_{n} \left( x \right) \right).
+\end{align*}
+and this map would be injective which is a contradiction as $C^{n}$ is finite dimensional while OTOH, $X$ is infinite dimensional.
+
+Thus, we can let $x_{0} \in X \setminus \left\{ 0 \right\}$ such that $f_{1} \left( x_{0} \right) = f_{2} \left( x_{0} \right) = \ldots = f_{n} \left( x_{0} \right) = 0$. Now, for any $t \in \C$ and $i \in \left\{ 1,2, \ldots, n \right\}$, we have that
+\begin{align*}
+    f_{i}\left( y + tx_{0} \right) = f_{i} \left( y \right).
+\end{align*}
+Hence, we have that 
+\begin{align*}
+    y+tx_{0} \in \cap_{i=1}^{n} f_{i} ^{-1} \left( \left\{ f_{i} \left( y \right) \right\} \right) \subset \bigcap_{k=1}^{n} f_{i}^{-1} \left( B\left( f_{i}\left( y \right), \varepsilon \right) \right).
+\end{align*}
+This shows that $y+tx_{0} \in U$ for each $t \in \C$. This completes the proof of our claim.
+
+Now, observe that the function $f \colon t \mapsto \|y+t x_0\|$ is continuous on $[0, +\infty)$, $f(0) \le 1$, and $f(t) = |t|\|x_0 + \frac1t x\| \to +\infty$, $t \to +\infty$ if $\|x_0\| \ne 0$. By the intermediate value theorem, there is a $t_{0} \in [0, +\infty )$ such that $f\left( t_{0} \right) = \norm{y+t_{0} x_{0}} = 1$.
+
+Thus, we have that $S \cap U \ne \emptyset$. 
 \end{proof}

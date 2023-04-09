@@ -5,12 +5,14 @@ Let $H$ be a Hilbert space. Show that closed unit ball in $H$ is compact in the 
 
 \horz
 
-\begin{proof}
-    First, we show that any Hilbert space is isometrically isomorphic to its dual. Let $H$ be a Hilbert space. Let $H^{*}$ be its dual. We establish that there is a isometry between $H$ and $H^{*}$. For each $y\in H$, define $L_{y} : H \to \C$ by $L_{y} (x) = \ip{x,y}$.
+\begin{proof}[Proof (sketch)]
+    First, we show that any \textsc{real} Hilbert space is isometrically isomorphic to its dual. Let $H$ be a Hilbert space. Let $H^{*}$ be its dual. We establish that there is a isometry between $H$ and $H^{*}$. For each $y\in H$, define $L_{y} : H \to \C$ by $L_{y} (x) = \ip{x,y}$.
 
     Now, consider the map $\varphi : H \to H^{*}$ given by $\varphi \left( y \right) = L_{y}$ for each $y\in H$. We claim that this map is an isometric isomorphism. It is easy to see this map is linear. To see that this map is one one, let $y \in H$ such that $L_{y} = 0$. Then we have that $\ip{y,y} =0$. Thus, $y=0$. This shows that $y =0$. Onto and isometry follows from Riesz Representation theorem.
 
     Now, we prove that if $X$ and $Y$ are isometric normed linear spaces then there is a homeomorphism between the weak topology on $X$ and the weak topology on $Y$. Let $\varphi : X \to Y$ be isometry between $X$ and $Y$. (Complete the proof \ldots)
 
     Therefore, we have the closed unit ball in $H$ is compact in the weak topology.
+
+    In the case of the complex Hilbert space, we have that map $\varphi : H \to H^{*}$ as defined previously is an antilinear map, which again is a homeomorphism.
 \end{proof}

@@ -4,3 +4,28 @@
 Suppose $X$ be an infinite dimensional normed linear space. Then show that the weak topology $(X,\tau_w)$ is never first countable and hence $(X,\tau_w)$ is not metrizable. 
 
 \horz
+
+\begin{proof}
+    Let $X$ be an infinite dimensional normed linear space. Then we have that $X^{*}$ is a Banach space. By BCT, let us keep in mind that $X^{*}$ cannot have a countable Hamel basis.
+
+    Let us assume for the sake of contradiction that $\calB _{0}= \left\{ B_{n} : n\in \N \right\}$ is a countable local basis at the origin $0$. For each $n \in \N$, we can find $f_{n,1}, f_{n,2}, \ldots , f_{n, k_{n}} \in X^{*}$ and $\varepsilon_{n} > 0$ such that
+    \begin{equation*}
+	\underbrace{\cap_{i=1}^{k_{n}} f_{n,i}^{-1} \left( B \left( 0, \varepsilon_{n} \right) \right)}_{\colon = \scrU_{n}} \subset B_{n}.
+    \end{equation*}
+
+    It is easy to see that $\left\{ \scrU_{n} : n \in \N \right\}$ forms a countable local basis at $0$. So, we may assume that $\calB_{0} = \left\{ \scrU_{n} : n\in \N \right\}$.
+
+    Consider the following countable set of linear functionals:
+    \begin{equation*}
+	\calF:=\left\{ f_{i,j} : i\in \N , 1\le j \le k_{i} \right\}.
+    \end{equation*}
+    
+    Since $X^{*}$ cannot have a countable Hamel basis, there must be some linear functional $f\in X^{*}$ such that $f\not \in \operatorname{span} \calF$. 
+
+    Consider the weakly open set $f^{-1} \left( B\left( 0,1 \right) \right)$. Since $\calB_{0}$ is a countable local basis at $0$, we must have that there is some $n\in \N$ such that
+    \begin{equation*}
+	\scrU_{n} \subset f^{-1} \left( B\left( 0,1 \right) \right).
+    \end{equation*}
+
+    The same proof in Question 10 shows that $\cap_{i=1}^{k_{n}} \ker f_{n,i} \subset \ker f$. Question 8 as a consequence shows that $f\in \operatorname{span} \calF$ which is a contradiction. Hence, we are done.
+\end{proof}

@@ -4,3 +4,24 @@
 Let $T: X^* \to \mathbb F$ be a linear functional such that $T$ is continuous w.r.t the weak star topology $(X,\tau_w).$ Show that $T= J_x$ for some $x\in X.$ 
 
 \horz
+
+\begin{proof}[Proof (sketch).]
+    Let $T: X^{*} \to \F$ be a linear functional that is continuous wrt weak star topology. Then $\Upsilon = \left\{ \varphi \in X^{*} : \abs{T(\varphi)} < 1 \right\}$ is weak starly open.
+
+    Note that $0 \in \Upsilon$. Thus, there must be some $x_{1}, x_{2}, \ldots, x_{k} \in X$ and $\varepsilon > 0$ such that 
+    \begin{equation*}
+	\bigcap_{i=1}^{k} \left\{ f \in X^{*} \, : \, \abs{J_{x_{i}}\left( \varphi \right)} < \varepsilon  \right\} = \bigcap_{i=1}^{k} \left\{ \varphi \in X^{*} \, : \, \abs{\varphi \left( x_{i} \right)} < \varepsilon  \right\}\subset \Upsilon.
+    \end{equation*}
+
+    Now, we claim that $\bigcap_{i=1}^{n} \ker J_{x_{i}} \subset \ker T$. Let $\varphi \in J_{x_{i}}$ for each $i=1,2, \ldots , k$. Let $n\in \N$ be arbitrary. Then we have that $J_{x_{i}} \left( n\varphi \right) = 0$, that is, $n\varphi \left( x_{i} \right) = 0$ for each $i=1,2,\ldots, k$. By the previous inclusion, we have that $n\varphi \in \Upsilon$.
+
+    Thus, we have that
+    \begin{equation*}
+	\abs{T(n\varphi )} < 1 \text{ for each } n\in \N.
+    \end{equation*}
+    which further implies that $T\left( \varphi \right) = 0$.
+
+    Hence, we have that $\varphi \in \ker T$.
+    
+    Question 8 in this Assignment then allows us to finish the problem.
+\end{proof}

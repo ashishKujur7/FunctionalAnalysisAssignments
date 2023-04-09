@@ -10,9 +10,13 @@ Let $H$ be a Hilbert space. Show that closed unit ball in $H$ is compact in the 
 
     Now, consider the map $\varphi : H \to H^{*}$ given by $\varphi \left( y \right) = L_{y}$ for each $y\in H$. We claim that this map is an isometric isomorphism. It is easy to see this map is linear. To see that this map is one one, let $y \in H$ such that $L_{y} = 0$. Then we have that $\ip{y,y} =0$. Thus, $y=0$. This shows that $y =0$. Onto and isometry follows from Riesz Representation theorem.
 
-    Now, we prove that if $X$ and $Y$ are isometric normed linear spaces then there is a homeomorphism between the weak topology on $X$ and the weak topology on $Y$. Let $\varphi : X \to Y$ be isometry between $X$ and $Y$. (Complete the proof \ldots)
+    Now, we prove that if $X$ and $Y$ are isometric normed linear spaces then there is a homeomorphism between the weak topology on $X$ and the weak topology on $Y$. To, this end, let $\varphi : X \to Y$ be isometry between two normed linear spaces $X$ and $Y$. Let $f \in X^{*}$ and $B\left( a,r \right) \subset \C$. Then $f^{-1} \left( B\left( a,r \right) \right)$ is an subbasis element of the weak topology on $X$. Then $f \circ T^{-1} \in Y^{*}$ as composition of bounded linear maps is bounded. Also, we have that 
+    \begin{equation*}
+	T\left( f^{-1} \left( B\left( a,r \right) \right) \right) = \left( f\circ T^{-1} \right) \left( B\left( a,r \right) \right)
+    \end{equation*}
+    which shows that $T$ sends an subbasis element of weak topology of $X$ to an subbasis element of weak topology of $Y$. A symmetric argument shows that $T^{-1}$ sends a subbasis element of weak topology of $Y$ to a weak topology of $X$.
 
     Therefore, we have the closed unit ball in $H$ is compact in the weak topology.
 
-    In the case of the complex Hilbert space, we have that map $\varphi : H \to H^{*}$ as defined previously is an antilinear map, which again is a homeomorphism.
+    In the case of the complex Hilbert space, we have that map $\varphi : H \to H^{*}$ as defined previously is an antilinear map, which again is a homeomorphism. (Note in the previous paragraph, we never used the fact that $T$ is a isometry, so, the same argument works!)
 \end{proof}

@@ -1,0 +1,41 @@
+\section{Question 5}
+
+\horz
+
+Let $H$ be a Hilbert space and $P_1, P_2\in \mathcal B(H),$ are two orthogonal projections in $\mathcal B(H).$  Show that $P_1 +P_2$ is an orthogonal projection if and only if $ran(P_1)$ is orthogonal to $ran(P_2),$ that $\langle P_1x, P_2y\rangle =0$ for every $x,y\in H.$ In this case $ran (P_1+P_2)= ran(P_1) + ran (P_2).$
+
+\horz
+
+\begin{proof}
+    Let $H$ be a Hilbert space and let $P_{1}, P_{2}$ be two orthogonal projections in $\calB \left( H \right)$. We proceed to show that $P_{1} + P_{2}$ is an orthogonal projection iff $\im P_{1}$ is orthogonal to $\im P_{2}$. 
+
+    \begin{description}
+	\item[$\left( \Longrightarrow \right)$] Suppose that $P_{1} + P_{2}$ is an orthogonal projection. Let $y_{1} \in \im P_{1}$ and $y_{2} \in \im P_{2}$. Then we have that $y_{1} = P_{1}x_{1}$ and $y_{2} =P_{2}x_{2}$ for some $x_{1} \in H$ and some $x_{2} \in H$.
+
+	    First, we show that $P_{1} P_{2} = -P_{1} P_{2}$. Note that
+	    \begin{align*}
+		P_{1} + P_{2} &=  \left( P_{1} + P_{2} \right)^{2} \\
+		&= P_{1} + P_{1}P_{2} + P_{2} P_{1} + P_{2} \\
+		\leadsto P_{1}P_{2} &= -P_{2}P_{1}.
+	    \end{align*}
+
+	\item[$\left( \Longleftarrow \right)$] Suppose that $\im P_{1}$ is orthogonal to $\im P_{2}$. We wish to show that $P_{1} + P_{2}$ is an orthogonal projection. The fact that $P_{1} + P_{2}$ is selfadjoint is immediate. It remains to show that $P_{1} + P_{2}$ is idempotent.
+
+	    But before that, we show that $P_{1}P_{2}=0$. Let $f\in H$. Observe that
+	    \begin{align*}
+		\norm{P_{1}P_{2}f}^{2} &= \ip{P_{1}P_{2}f, P_{1}P_{2}f} \\
+		&= \ip{P_{1}^{*}P_{1}P_{2}f, P_{2}f} \\
+		&= \ip{P_{1}^{2}P_{2}f, P_{2}f} \\
+		&= \ip{P_{1}P_{2}f, P_{2}f} \\
+		&= 0.
+	    \end{align*}
+	    The first equality is by definition, the second is by definition of adjoint operator and the third is because $P_{1}$ is an orthogonal projection and hence adjoint, the the third is because $P_{1}$ is selfadjoint and the last is due to our assumption that $\im P_{1}$ is orthogonal to $\im P_{2}$. This shows that $P_{1}P_{2} = 0$.
+
+	    Similarly, it can be shown that $P_{2}P_{1} = 0$. Now, we proceed to $(P_{1} + P_{2})^{2} = P_{1} + P_{2}$. Observe that
+	    \begin{align*}
+		(P_{1} + P_{2})^{2} &= P_{1}^{2} + P_{1}P_{2} + P_{2}P_{1} + P_{2}^{2} \\
+		&= P_{1} + P_{2}.
+	    \end{align*}
+	    The first equality is obvious and in the second one, we are using the fact that $P_{1}, P_{2}$ are idempotent and $P_{1}P_{2}=P_{2}P_{1} = 0$.
+    \end{description}
+\end{proof}

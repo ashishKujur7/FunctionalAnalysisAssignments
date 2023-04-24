@@ -1,0 +1,19 @@
+\section{Question 2}
+\horz 
+
+Let $H$ be a Hilbert space and $T\in \mathcal B(H).$ Suppose $A\in \mathcal B(H)$ and $A \geqslant 0.$ Then show that $T^* AT \geqslant 0.$
+
+\horz
+
+\begin{proof}
+    Let $A , T\in \calB \left( H \right)$ and suppose that $A \ge 0$. Then we need to show that $T^{*} A T \ge 0$. First, we need to show that $T^{*} A T$ is self adjoint. To this end, consider the following:
+    \begin{align*}
+	\left( T^{*} A T \right)^{*} &= T^{*} A^{*} (T^{*})^{*} \\
+	&=  T^{*} A T
+    \end{align*}
+    Since $A \ge 0$, we have that $A$ is self-adjoint by definition. Now, let us show that $\ip{T^{*}ATx, x} \ge 0 $ for each $x\in H$. To this end, let $x \in H$ and consider the following:
+    \begin{align*}
+	\ip{T^{*}AT x, x} &= \ip{ATx , Tx}  \ge 0 \text{ since } Tx \in H \text{ and } A\ge 0.
+    \end{align*}
+    This completes the proof.
+\end{proof}

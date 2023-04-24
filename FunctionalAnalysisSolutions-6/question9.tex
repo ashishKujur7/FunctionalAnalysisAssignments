@@ -1,0 +1,18 @@
+\section{Question 9}
+
+\horz
+
+Let $H$ be a Hilbert space and $T\in \mathcal B(H).$ Suppose $X$ is an invertible operator in $\mathcal B(H).$ Then show that $\sigma (X^{-1}TX) = \sigma (T).$ ( In other words similar operators have same spectrum). 
+
+\horz
+
+\begin{proof}
+    Let $X$ be an invertible operator in $\calB \left( H \right)$. Consider the following equivalence:
+    \begin{align*}
+	\alpha \not \in \sigma \left( T \right) &\Longleftrightarrow T-\alpha I \text{ is invertible} \\
+	&\Longleftrightarrow X^{-1}T - \alpha X^{-1} \text{ is invertible} \\
+	&\Longleftrightarrow X^{-1}TX - \alpha I \text{ is invertible} \\
+	&\Longleftrightarrow \alpha \not \in \sigma \left( X^{-1}TX \right).
+    \end{align*}
+    This shows that $\sigma \left( X^{-1}TX \right) = \sigma \left( T \right)$.
+\end{proof}

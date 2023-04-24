@@ -1,0 +1,21 @@
+\section{Question 8}
+
+\horz
+
+Let $H$ be a Hilbert space and $M$ be a closed subspace of $H$. Let $P_M$ be the orthogonal projection onto $M.$ Compute the spectrum $\sigma(P_M).$
+
+\horz
+
+\begin{proof}
+    Let $P_{M}$ be the orthogonal projection onto $M$. Define a polynomial $p\left( z \right) \in \C \left[ z \right]$ given by $p\left( z \right) = z^{2} - z$. It is easy to see that $p\left( P_{M} \right) = 0$.
+    
+    It follows that by the Spectral Mapping Theorem that
+    \begin{equation*}
+	p(\sigma \left( P_{M} \right)) = \sigma \left( p\left( P_{M} \right) \right) \\
+	= \sigma \left( 0 \right) = \left\{ 0 \right\}.
+    \end{equation*}
+    Hence, if $\alpha \in \sigma \left( P_{M} \right)$, we have that $\alpha^{2} - \alpha = 0$. Thus, $\alpha \in \left\{ 0,1 \right\}$. This shows that $\sigma \left( P_{M} \right) \subset \left\{ 0,1 \right\}$.
+
+    Since the spectrum is nonempty, we must have that exactly one of the following holds: $\sigma \left( P_{M} \right)= \left\{ 0 \right\}$ or $\sigma \left( P_{M} \right) = \left\{ 1 \right\}$ or $\sigma \left( P_{M} \right) = \left\{ 0,1 \right\}$. Since $P_{M}$ is a projection, we have that $H= \ker P_{M} \oplus \im P_{M}$. This shows that this corresponds to $P_{M}=I$, $P_{M}=0$ and "something in between"!
+\end{proof}
+

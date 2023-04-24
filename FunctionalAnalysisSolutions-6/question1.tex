@@ -1,0 +1,20 @@
+\section{Question 1}
+\horz
+
+Let $H$ be a Hilbert space and $T\in \mathcal B(H).$ Show that $T^*T \geqslant 0.$
+
+\horz
+
+\begin{proof}
+    First, we need to show that $T^{*}T$ is self-adjoint. Observe that
+    \begin{align*}
+	\left( T^{*}T \right)^{*} &= T^{*} \left( T^{*} \right)^{*} & (ST)^{*} = T^{*} S ^{*} \\
+	&= T^{*} T. & \left( T^{*} \right)^{*} = T
+    \end{align*}
+    To show that $T^{*}T \ge 0$, we need to show that $\ip {T^{*} T x, x} \ge 0$ for each $x\in H$. To this end, let $x\in H$. Then we have
+    \begin{align*}
+	\ip{T^{*}Tx, x} &= \ip {Tx, \left( T^{*} \right)^{*} x} & \text{by definition} \\
+	&= \ip{Tx , Tx} \ge 0 & \text{by definition of inner product}
+    \end{align*}
+    This completes the proof.
+\end{proof}

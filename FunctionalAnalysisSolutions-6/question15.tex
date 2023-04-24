@@ -1,0 +1,73 @@
+\section{Question 15}
+\horz
+
+For $\varphi \in L^{\infty}[0,1],$ consider the operator $M_{\varphi}: L^2[0,1]\to L^2[0,1],$ defined by $M_{\varphi} f= \varphi f,\,f\in L^2[0,1].$ The essential range of $\varphi$ (w.r.t the Lebesgue measure) denoted as $ \mbox{ess ran\,} (\varphi) $ is defined  as follows:
+
+A point $p\in \mathbb C$ is said to be not in the $ \mbox{ess ran\,} (\varphi) $ if there exist a $\delta >0$ such that the Lebesgue measure $m (\varphi^{-1}(B(p, \delta))) =0.$
+
+Prove that $\sigma(M_{\varphi})=  \mbox{ess ran\,} (\varphi).$
+
+\horz
+
+\begin{proof}
+    We first show that $\alpha$ is an eigenvalue of $M_{\varphi}$ iff $m\left( \left\{ t\in [0,1] : \varphi \left( t \right) = \alpha \right\} \right) > 0$. 
+
+    \begin{description}
+	\item[$\left( \Longrightarrow \right)$] Let $\alpha$ be an eigenvalue of $M_{\varphi}$. Then there exists $f \ne 0$ such that $M_{\varphi} f = \alpha f$, that is, $\varphi f = \alpha f$.
+
+	    Assume for the sake of contradiction that $m\left( \left\{ \varphi =\alpha \right\} \right) = 0$.
+
+	    Observe that $\left\{ f\ne 0 \right\} \subset \left\{ \varphi = \alpha \right\} \cup \left\{ \varphi f \ne \alpha \varphi \right\}$. This is easy to verify: let $t \in [0,1]$ be such that $f(x)\ne 0$. If $\varphi (x) = \alpha$, we are done because then $x \in \left\{ \varphi = \alpha \right\}$. So suppose not, that is, $\varphi(x) \ne \alpha$. Then $\varphi (x) f (x) \ne \alpha f(x)$ because we are multiplying by a nonzero number.
+
+	    Now, $m\left( f\ne 0 \right) \le m \left( \left\{ \varphi =\alpha \right\} \right) + m \left( \{\varphi f \ne \alpha \varphi \} \right) = 0$. Hence, $m \left( f\ne 0 \right) = 0$ as $\varphi (x) f(x) = \alpha f(x)$ for almost all $x\in [0,1]$.
+	\item[$\left( \Longleftarrow \right)$] Let $\alpha \in \C$ such that $m \left( \left\{ t \in [0,1] : \varphi (t) = \alpha \right\} \right) > 0$. We wish to show that $\alpha$ is an eigenvalue of $M_{\varphi}$. Note that $\chi_{\left\{ \varphi = \alpha \right\}} \ne 0$ and also we have that $\varphi \chi_{ \left\{ \varphi = \alpha \right\}} = \alpha \chi_{ \left\{ \varphi = \alpha \right\}}$. This shows that $\alpha$ is an eigenvalue of $M_{\varphi}$ as $\chi_{ \left\{ \varphi=\alpha \right\}} \in L^{2} \left[ 0,1 \right]$.
+    \end{description}
+
+    This describes the point spectrum of $M_{\varphi}$.
+
+
+    Now, we show that $\sigma \left( M_{\varphi} \right) = \operatorname{ess ran} \varphi$. This is equivalent to showing that $\alpha \not\in \sigma \left( M_{\varphi} \right)$ iff $m \left( \left\{ \abs{h-\alpha} < \varepsilon \right\} \right) =0$ for some $\varepsilon > 0$. Before we prove this, we prove a preliminary lemma:
+
+    \begin{description}
+	\item[Lemma 1.] Let $\left( X, \mathscr A, \mu \right)$ be a finite measure space. Let $h \in \calL ^{\infty} \left( d\mu \right)$, $\varepsilon >0$ and suppose that $\abs{h} \ge \varepsilon$ for $\mu$-almost everywhere. Then we have that there is a $\eta \in \calL^{\infty} \left( \mu \right)$ such that $h(x)\eta(x) = \eta (x) h(x) = 1$ for $\mu$-almost all $x\in X$.
+	    \begin{proof}[Proof of Lemma 1]
+		Let $h$ be as in the hypothesis of the lemma. We can define a function. Define a function $\eta : X \to \C$ given by
+		\begin{equation*}
+		    \eta (x) = 
+		    \begin{cases}
+			\frac{1}{h(x)} & h(x)\ne 0 \\
+			0 & x = 0
+		    \end{cases}
+		\end{equation*}
+		Note that $\left\{ x \in X : h\left( x \right) = 0 \right\}$ is a set of measure zero because it is contained in $\left\{ x \in X : \abs{h(x)} < \varepsilon \right\}$ which is a set of measure zero by assumption. Thus, $\eta \left( x \right) = \frac{1}{h(x)}$ for $\mu$-almost all $x \in X$. Hence, we have that $h(x)\eta(x) = \eta(x) h(x) = 1$ for $\mu$ almost all $x\in X$. Since $\abs{\eta (x)} \le \frac{1}{\varepsilon}$ for $\mu$-almost all $x\in X$. We have that $\norm{\eta}_{\infty} \le \frac{1}{\varepsilon}$. This completes the proof of the lemma.
+	    \end{proof}
+	\item[$\left( \Longrightarrow \right)$] Let $\alpha \in \C$ and suppose that there exist $\varepsilon>0$ such that $m\left( \left\{ \abs{\varphi -\alpha} < \varepsilon \right\} =0 \right)$. Since $\varphi \in \calL ^{\infty} [0,1]$, we have that $\varphi - \alpha \in \calL ^{\infty} [0,1]$. By hypothesis, we have that $\abs{\varphi - \alpha} \ge \varepsilon$ for almost all $x \in [0,1]$. Hence by the previous lemma, there exists a function (which we call) $(\varphi - \alpha ) ^{-1} \in \calL ^{\infty} [0,1]$ such that $\left( \varphi -\alpha \right) (x) \cdot \left( \varphi - \alpha \right)^{-1} (x) = \left( \varphi -\alpha \right)^{-1} (x) \cdot \left( \varphi - \alpha \right) (x)  = 1$ for almost all $x\in [0,1]$. It is easy to see now that $M_{\varphi - \alpha} M_{\left( \varphi - \alpha \right)^{-1}} = I$ and $M_{\left( \varphi - \alpha \right)^{-1}} M_{\varphi - \alpha} = I$ and hence $\alpha \not\in \sigma \left( M_{\varphi} \right)$.
+	\item[$\left( \Longleftarrow \right)$] Suppose that $\alpha \not\in \sigma \left( M_{\varphi} \right)$. Thus, we have that $M_{\varphi - \alpha}$ is invertible. Hence, by Question 12, we have that there exists $\varepsilon > 0$ such that 
+	    \begin{equation*}
+		\norm{M_{\varphi - \alpha}x} \ge \varepsilon \norm{x}
+	    \end{equation*}
+	    for each $x\in X$.
+	    As a consequence we have that 
+	    \begin{equation*}
+		\norm{M_{\varphi-\alpha}}_{(L^{2}[0,1])^{*}} \ge \varepsilon.
+	    \end{equation*}
+	    Also, it can be easily shown that
+	    \begin{equation*}
+		\norm{M_{\varphi - \alpha}} \le \norm{\varphi-\alpha}_{\infty}.
+	    \end{equation*}
+	    From the above two lines, we have that
+	    \begin{equation*}
+		\norm{\varphi -\alpha}_{\infty} \ge \varepsilon.
+	    \end{equation*}
+	    Thus by definition of $\operatorname{esssup}$, we have that 
+	    \begin{equation*}
+		\abs{\varphi (x) - \alpha} \ge \varepsilon
+	    \end{equation*}
+	    for almost all $x\in X$.
+	    Hence, we have that 
+	    \begin{equation*}
+		m \left( \left\{ |\varphi - \alpha| < \varepsilon \right\} = 0 \right).
+	    \end{equation*}
+	    This completes the proof.
+    \end{description}
+\end{proof}

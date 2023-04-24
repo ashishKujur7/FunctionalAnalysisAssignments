@@ -1,0 +1,74 @@
+\section{Question 10}
+\horz
+
+Let $H$ be a Hilbert space and $T\in \mathcal B(H).$ Suppose $X$ is a unitary operator in $\mathcal B(H).$ Then show that 
+\begin{itemize}
+\item[(i)] $\|X^{-1}TX\| = \|T\|.$
+\item[(ii)] $T$ is normal if and only if $X^{-1}TX$ is normal.
+\item[(iii)] $T$ is self adjoint if and only if $X^{-1}TX$ is self adjoint.
+\item[(iv)] $T \geqslant 0$ if and only if $X^{-1}TX \geqslant 0.$
+\item[(v)] $T$ is an orthogonal projection if and only if $X^{-1}TX$ is orthogonal projection. 
+\end{itemize}
+\horz
+
+\begin{proof}
+    Let $H$ be a Hilbert space and $T \in \calB \left( H \right)$. Let $X$ be a unitary operator in $\calB \left( H \right)$. 
+
+    \begin{enumerate}[label=(\roman*)]
+	\item We intend to show that $\norm{X^{-1}TX}=\norm{T}$. Since $X$ is a unitary operator, we have that $X$ is an isometric isomorphism.
+	    To this end, let $f\in H$ and consider the following:
+	    \begin{align*}
+		\norm{X^{-1}TXf}^{2} &= \norm{X^{*}TXf}^{2} \\
+		&= \ip{X^{*}TXf, X^{*}TXf} \\
+		&= \ip{TXf, XX^{*}TXf} \\
+		&= \ip{TXf, TXf} \\
+		&= \norm{TXf}^{2}.
+	    \end{align*}
+	    Thus, we have that
+	    \begin{equation}
+		\norm{X^{-1}TXf} = \norm{TXf}
+		\label{eqn:10.1}
+	    \end{equation}
+	    for each $f\in H$.
+	    Now, we claim that
+	    \begin{equation}
+		\left\{ \norm{TXf} : \norm{f}=1 \right\} = \left\{ \norm{Tf} : \norm{f}=1 \right\}.
+		\label{eqn:10.2}
+	    \end{equation}
+	    To prove this:
+	    \begin{description}
+		\item[$\left( \subset \right):$]  Let $y=\norm{TXf}$ for some $f \in H$ with $\norm{f}=1$. Since $X$ is a unitary operator, we have that $\norm{Xf}=\norm{f}=1$, hence, $y$ is in the set of the right side of the equality of the aforementioned claim.
+		\item[$\left( \supset \right):$] Let $y=\norm{Tg}$ for some $g\in H$ with $\norm{g}=1$. Since $X$ is unitary, it is invertible and hence $Xf=g$ for some $f\in H$. Since $X$ is unitary, we have that $\norm{f}=\norm{Xf}=\norm{g}=1$. Thus, $y$ is in the left side of the set in the aforementioned equality.
+	    \end{description}
+	    Thus, we have 
+	    \begin{align*}
+		\norm{X^{*}TX} &= \sup_{\norm{f}=1} \norm{X^{*}TXf} & \text{(by definition)}\\
+		&= \sup_{\norm{f}=1} \norm{TXf} & \text{(see \ref{eqn:10.1})}\\
+		&= \sup_{\norm{f}=1} \norm{Tf} & \text{(see \ref{eqn:10.2})} \\
+		&= \norm{T}. & \text{(by definition)}
+	    \end{align*}
+	    This completes the proof.
+	\item 
+	    \begin{description}
+		\item[$\left( \Longrightarrow \right)$] Assume that $T$ is normal. Consider the following:
+		    \begin{align*}
+			\left( X^{*}TX \right)\left( X^{*}TX \right)^{*} &=  X^{*}TXX^{*}T^{*}X \\
+			&= X^{*}TT^{*}X
+		    \end{align*}
+
+		    and on the other hand, we have
+		    \begin{align*}
+			\left( X^{*}TX \right)^{*} \left( X^{*}TX \right) &=  X^{*}TXX^{*}TX \\
+			&= X^{*}TT^{*}X \\
+		    \end{align*}
+		    Note that the two computations above show that $X^{*}TX$ is normal by assuming $T$ is normal.
+		\item[$\left( \Longleftarrow \right)$] The computation in the other direction, normality of $X^{*}TX$ and the invertibility of $X$ imply that $T$ is normal.
+	    \end{description}
+	    This completes the proof.
+	\item Skipping because \textsc{Easy!}.
+
+	\item Skipping because \textsc{Easy!}.
+
+	\item Skipping because \textsc{Easy!}.
+    \end{enumerate}
+\end{proof}

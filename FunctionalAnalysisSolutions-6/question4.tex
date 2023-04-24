@@ -1,0 +1,50 @@
+\section{Question 4}
+\horz
+
+Let $H$ be a Hilbert space and $P_1, P_2\in \mathcal B(H),$ are two orthogonal projections,that is, $P_j^2=P_j$ and $P_j^*=P_j$ for each $j=1,2$. Show that $P_1P_2$ is an orthogonal projection if and only if $P_1P_2= P_2P_1.$ In this case $\operatorname{ran} (P_1P_2)= \operatorname{ran} (P_1) \cap \operatorname {ran}(P_2).$
+
+\horz
+
+\begin{proof}
+    Let $P_{1}, P_{2} \in \calB \left( H \right)$ be two orthogonal projections.
+    We show that $P_{1} P_{2}$ is an orthogonal projection iff $P_{1} P_{2} = P_{2} P_{1}$. 
+
+    $\left( \Longrightarrow \right)$ Suppose that $P_{1} P_{2}$ is an orthogonal projection. We wish to show that $P_{1} P_{2} = P_{2} P_{1}$. To do so, consider the following:
+    \begin{align*}
+	P_{1} P_{2} &= \left( P_{1} P_{2} \right) ^{*} & P_{1} P_{2} \text{ being orthogonal projection} \\
+	&= P_{2}^{*} P_{1} ^{*} & \text{property of the adjoint}\\
+	&= P_{2} P_{1} & P_{1}, P_{2}. \text{ being orthogonal projection}
+    \end{align*}
+    $\left( \Longleftarrow \right)$ Suppose that $P_{1} P_{2} = P_{2} P_{1}$. We wish to show that $P_{1}P_{2}$ is an orthogonal projection. 
+    \begin{description}
+	\item[$P_{1}P_{2}$ is self adjoint:] Consider the following:
+	    \begin{align*}
+		(P_{1} P_{2})^{*} &= P_{2}^{*} P_{1} ^{*} \\
+		&= P_{2} P_{1} \\
+		&= P_{1} P_{2}. & \text{ by assumption }
+	    \end{align*}
+
+	\item[$P_{1} P_{2}$ is idempotent:] Consider the following:
+	    \begin{align*}
+		(P_{1} P_{2})^{2} &= P_{1} P_{2} P_{1} P_{2} \\
+		&= P_{1} P_{1} P_{2} P_{2} & \text{since } P_{1} P_{2} = P_{2} P_{1} \\
+		&= P_{1}^{2} P_{2}^{2} \\
+		&= P_{1} P_{2} & \text{since } P_{1}, P_{2} \text{ are orthogonal projection}
+	    \end{align*}
+    \end{description}
+    This shows that the both directions of the iff.
+    Let us assume that $P_{1}P_{2}=P_{2}P_{1}$. Now, we proceed to show that $\im \left( P_{1} P_{2} \right) = \im P_{1} \cap \im P_{2}$. 
+    \begin{description}
+	\item[$(\subset)$ :] Let $y \in \im P_{1}P_{2}$. Then we have that $y=P_{1}P_{2} x$ for some $x\in H$. Since $P_{2}x \in H$, we have that $y=P_{1}x$. Also, note that $y=P_{2}P_{1}x$ since $P_{1}$ and $P_2$ commute. Hence, we have that $y\in \im P_{2}$. This shows that $\im P_{1}P_{2} \subset \im P_{1} \cap \im P_{2}$.
+	\item[$(\supset)$ :] Let $y\in \im P_{1} \cap \im P_{2}$. Then we have $y=P_{1}x_{1}=P_{2}x_{2}$ for some $x_{1} \in H$ and some $x_{2} \in H$. It follows that
+	    \begin{align*}
+		P_{1}y &=P_{1}^{2} x_{1} \leadsto P_{1}y = P_{1}x_{1} \leadsto y= P_{1}y
+	    \end{align*}
+	    and
+\begin{align*}
+    P_{2}y &=P_{2}^{2} x_{2} \leadsto P_{2}y = P_{2}x_{2} \leadsto y= P_{2}y.
+	    \end{align*}
+	    The above two equalities show that $y\in \im P_{1} \cap \im P_{2}$.
+    \end{description}
+\end{proof}
+

@@ -5,3 +5,4 @@
 3. [Assignment 3](https://raw.githubusercontent.com/ashishKujur7/FunctionalAnalysisAssignments/main/FunctionalAnalysisSolutions-3/fa_3.pdf)
 4. [Assignment 4](https://raw.githubusercontent.com/ashishKujur7/FunctionalAnalysisAssignments/main/FunctionalAnalysisSolutions-4/fa_4.pdf)
 5. [Assignment 5](https://raw.githubusercontent.com/ashishKujur7/FunctionalAnalysisAssignments/main/FunctionalAnalysisSolutions-5/fa_5.pdf)
+6. [Assignment 6](https://github.com/ashishKujur7/FunctionalAnalysisAssignments/raw/main/FunctionalAnalysisSolutions-6/fa_6.pdf)

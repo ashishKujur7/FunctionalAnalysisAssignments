@@ -16,8 +16,35 @@ Let $H$ be a Hilbert space and $P_1, P_2\in \mathcal B(H),$ are two orthogonal p
 	    \begin{align*}
 		P_{1} + P_{2} &=  \left( P_{1} + P_{2} \right)^{2} \\
 		&= P_{1} + P_{1}P_{2} + P_{2} P_{1} + P_{2} \\
-		\leadsto P_{1}P_{2} &= -P_{2}P_{1}.
 	    \end{align*}
+	    Hence, this implies that
+	    \begin{equation}
+		P_{1}P_{2}=-P_{2}P_{1}.
+		\label{eqn:5.1}
+	    \end{equation}
+	    Now, multiplying the previous equation by $P_{2}$, we have that $P_{2}P_{1}=-P_{2}P_{1}P_{2}$. $P_{2}P_{1}$ is then self-adjoint as
+	    \begin{equation*}
+		(P_{2}P_{1})^{*} = \left( -P_{2}P_{1}P_{2} \right)^{*} = - P_{2}^{*} P_{1}^{*} P_{2}^{*} = -P_{2} P_{1} P_{2}=P_{2}P_{1}.
+	    \end{equation*}
+	    Taking adjoint in both sides of Equation \ref{eqn:5.1}, we have that 
+	    \begin{align*}
+		P_{2}P_{1}&=\left( P_{2}P_{1} \right)^{*} \\
+		&= \left( -P_{1}P_{2} \right)^{*} \\
+		&= -P_{2}P_{1}
+	    \end{align*}
+	    and consequently,
+	    \begin{equation}
+		P_{2}P_{1} = P_{1}P_{2} = 0.
+		\label{eqn:5.2}
+	    \end{equation}
+
+	    Now, we proceed to show that $\im P_{1}$ is orthogonal to $\im P_{2}$. To this end, let $x_{1}, x_{2} \in H$. Then we have that
+	    \begin{align*}
+		\ip{P_{1}x_{1}, P_{2}x_{2}} &= \ip{P_{2}P_{1}x_{1},x_{2}}\\
+		&= \ip{0x_{1},x_{2}} \\
+		&= 0 & (\text{See } \ref{eqn:5.2})
+	    \end{align*}
+	    This shows that $\im P_{1}$ is orthogonal to $\im P_{2}$.
 
 	\item[$\left( \Longleftarrow \right)$] Suppose that $\im P_{1}$ is orthogonal to $\im P_{2}$. We wish to show that $P_{1} + P_{2}$ is an orthogonal projection. The fact that $P_{1} + P_{2}$ is selfadjoint is immediate. It remains to show that $P_{1} + P_{2}$ is idempotent.
 
@@ -38,4 +65,25 @@ Let $H$ be a Hilbert space and $P_1, P_2\in \mathcal B(H),$ are two orthogonal p
 	    \end{align*}
 	    The first equality is obvious and in the second one, we are using the fact that $P_{1}, P_{2}$ are idempotent and $P_{1}P_{2}=P_{2}P_{1} = 0$.
     \end{description}
+    Now, we proceed to show that $\im \left( P_{1} + P_{2} \right) = \im P_{1} + \im P_{2}$. Consider the following:
+    \begin{description}
+	\item[$\left( \subset \right)$:] Let $y \in \im \left( P_{1} + P_{2} \right)$. Then $y=\left( P_{1} + P_{2} \right)x$ for some $x\in H$. Then we have that 
+	    \begin{equation*}
+		y=\underbrace{P_{1}x}_{\in \im P_{1}} + \underbrace{P_{2}x}_{\in \im P_{2}} \in \im P_{1} + \im P_{2}.
+	    \end{equation*}
+	\item[$\left( \supset \right)$:] Let $y\in \im P_{1} + \im P_{2}$. Then $y= P_{1}x_1 + P_{2}x_{2}$ for some $x_{1} \in H$ and some $x_{2} \in H$. Since we have that $P_{1}+P_{2}$ is an orthogonal projection, we have that $P_{1}P_{2}=-P_{2}P_{1}$ as in $\left( \Longrightarrow \right)$ in the first part of the proof. Thus, we have that
+	    \begin{equation*}
+		P_{2}y= P_{2}P_{1}x_{1} + P_{2}^{2}x_{2} = P_{2}x_{2}
+	    \end{equation*}
+	    and similarly we have that
+	    \begin{equation*}
+		P_{1}y=P_{1}x_{1}.
+	    \end{equation*}
+	    Hence we have that
+	    \begin{equation*}
+		y=P_{1}y + P_{2}y = \left( P_{1} + P_{2} \right)y
+	    \end{equation*}
+	    and consequently $y \in \im \left( P_{1} + P_{2} \right)$.
+    \end{description}
+    This completes the proof.
 \end{proof}

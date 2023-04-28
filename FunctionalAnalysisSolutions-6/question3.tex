@@ -6,5 +6,10 @@ Let $H$ be a Hilbert space and $T, S\in \mathcal B(H),$ satisfying $T\geqslant 0
 \horz
 
 \begin{proof}
-    Routine check. Follows immediately.
+    The fact that $T+S$ is selfadjoint follows from the fact that the adjoint map is antilinear. To complete the rest, let $x\in H$ and consider the following:
+    \begin{align*}
+	\ip{(S+T)x,x} &= \ip{Sx,x} + \ip{Tx,x} \\
+	& \ge 0.
+    \end{align*}
+    This completes the proof.
 \end{proof}

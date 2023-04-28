@@ -11,6 +11,16 @@ Let $H$ be a Hilbert space and $M$ be a closed subspace of $H$. Let $P_M$ be the
     We wish to show that $M$ is an invariant subspace of $T$ iff $TP_{M}=P_{M}TP_{M}$.
 
     \begin{description}
-	\item[$\left( \Longrightarrow \right)$] Suppose that $M$ is an invariant subspace of $T$, that is, $TM \subset M$. We wish to show that 
+	\item[$\left( \Longrightarrow \right)$] Suppose that $M$ is an invariant subspace of $T$, that is, $TM \subset M$. We wish to show that $TP_{M} = P_{M}TP_{M}$.
+
+	    First, we show that if $x\in M$ then $P_{M}x=x$. To show this, let $x\in M$. Then by the decomposition of Hilbert space by a closed subspace, we have that
+	    \begin{equation*}
+		x=P_{M}x + P_{M^{\perp}}x
+	    \end{equation*}
+	    but then $x-P_{M}x \in M \cap M^{\perp} = \left\{ 0 \right\}$. Thus, we must have that $x=P_{M}x$.
+
+	    Now, let $x\in M$ then we have that $TP_{M}x \in M$ because $P_{M}x \in M$ and therefore, we have that $TP_{M}x \in M$. By what we just proved we have that $TP_{M}x = P_{M}TP_{M}x$. Since $x\in H$ was arbitrary, we have that $TP_{M} = P_{M} TP_{M}$.
+	\item[$\left( \Longleftarrow \right)$] Suppose that $TP_{M}=P_{M}TP_{M}$. Let $x\in M$. Then we have that $P_Mx =x$ by what we proved earlier. Thus, we have that $Tx=P_{M}TP_{M}x \in M$.
     \end{description}
-\end{proof}
+    This completes the proof.
+	\end{proof}

@@ -65,10 +65,55 @@ Let $H$ be a Hilbert space and $T\in \mathcal B(H).$ Suppose $X$ is a unitary op
 		\item[$\left( \Longleftarrow \right)$] The computation in the other direction, normality of $X^{*}TX$ and the invertibility of $X$ imply that $T$ is normal.
 	    \end{description}
 	    This completes the proof.
-	\item Skipping because \textsc{Easy!}.
+	\item 
+	    \begin{description}
+		\item[$\left( \Longrightarrow \right)$:] Suppose that $T$ is adjoint. To show that $X^{*}TX$ is self-adjoint, consider the following:
+		    \begin{align*}
+			\left( X^{*}TX \right)^{*} &= X^{*}T^{*}X \\
+		&= X^{*}T X & (\text{using the fact that } T \text{is self-adjoint})
+		    \end{align*}
+		\item[$\left( \Longrightarrow \right)$] Suppose that $X^{*}TX$ is self-adjoint. To show $T$ is adjoint, consider the following:
+		    \begin{align*}
+			T^{*} &= XX^{*}T^{*}XX^{*} \\
+			&= X\left( X^{*}TX \right)^{*} X^{*} \\
+			&= XX^{*}TXX^{*} & (T\text{ is self-adjoint}) \\
+			&= T.
+		    \end{align*}
+	    \end{description}
 
-	\item Skipping because \textsc{Easy!}.
+	\item 
+	    \begin{description}
+		\item[$\left( \Longrightarrow \right)$] Suppose that $T\ge 0$. The fact that $X^{*}TX$ is self-adjoint follows from item $\left( \text{iii} \right)$. Now, let $x\in H$. Consider the following:
+		    \begin{align*}
+			\ip{X^{*}TXx,x} &= \ip{TXx, Xx} \\
+		    &\ge 0 & (\text{since } T \text{ is positive})
+		    \end{align*}
+		\item[$\left( \Longleftarrow \right)$] Suppose that $X^{*}TX\ge0$. The fact that $T$ is selfadjoint follows from item (iii). To complete the rest, let $f\in H$ and consider the following:
+		    \begin{align*}
+			\ip{Tx,x} &= \ip{XX^{*}TXX^{*}x,x} \\
+			&= \ip{X^{*}TX(X^{*}x), X^{*}x} \\
+		    & \ge 0 & (\text{since } X^{*}TX \ge 0)
+		    \end{align*}
+	    \end{description}
 
-	\item Skipping because \textsc{Easy!}.
+	\item First of all, note that item (iii) does half of the job. 
+	    \begin{description}
+		\item[$\left( \Longrightarrow \right)$] Suppose that $T$ is idempotent. Then we have that 
+		    \begin{align*}
+			\left( X^{*}TX \right)^{2} &=  X^{*}TXX^{*}TX \\
+			&= X^{*}T^{2}X \\
+			&= X^{*} TX & (T \text{ is idempotent})
+		    \end{align*}
+		\item[$\left( \Longleftarrow \right)$] Suppose that $X^{*}TX$ is idempotent. We wish to show that $T$ is idempotent. Observe that 
+		    \begin{align*}
+			T^{2} &=  TT \\
+			&= XX^{*}TXX^{*}XX^{*} \\
+			&= X\left( X^{*}TX \right)^{2}X^{*} \\
+			&= X X^{*}TXX^{*} & (X^{*}TX \text{ is idempootent}) \\
+			&= T.
+		    \end{align*}
+	    \end{description}
     \end{enumerate}
+
+    This completes the entire proof.
 \end{proof}

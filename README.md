@@ -7,4 +7,4 @@ Some solutions to the problems that I solved in the Functional Analysis course a
 4. [Assignment 4](https://raw.githubusercontent.com/ashishKujur7/FunctionalAnalysisAssignments/main/FunctionalAnalysisSolutions-4/fa_4.pdf?token=GHSAT0AAAAAAB5E6SWS4WXNM5PFAMZZHXQQZCXUJHA)
 5. [Assignment 5](https://raw.githubusercontent.com/ashishKujur7/FunctionalAnalysisAssignments/main/FunctionalAnalysisSolutions-5/fa_5.pdf?token=GHSAT0AAAAAAB5E6SWTZKZ6VV4EBTGMZEH6ZCXUKPA)
 6. [Assignment 6](https://raw.githubusercontent.com/ashishKujur7/FunctionalAnalysisAssignments/main/FunctionalAnalysisSolutions-6/fa_6.pdf?token=GHSAT0AAAAAAB5E6SWTG7TKD5WU32CLRYACZCXUKNA)
-7. [Assignment 7](https://raw.githubusercontent.com/ashishKujur7/FunctionalAnalysisAssignments/main/FunctionalAnalysisSolutions-7/fa_7.pdf?token=GHSAT0AAAAAAB5E6SWS4NKR6YJXECFTSLY4ZCXUFHA)
+7. [Assignment 7](https://raw.githubusercontent.com/ashishKujur7/FunctionalAnalysisAssignments/main/FunctionalAnalysisSolutions-7/fa_7.pdf?token=GHSAT0AAAAAAB5E6SWS6CXE7N25LYREYA36ZCXULUA)

@@ -1,0 +1,32 @@
+\section{Question 1}
+\horz
+
+Let $H$ be a Hilbert space. Suppose $\{T_n\}_{n\in\mathbb N}$ is a sequence operators in $\mathcal B(H),$
+satisfying $\|T_n-T\| \to 0$ as $n\to\infty$ for some $T\in \mathcal B(H).$ If every $T_n$ is self adjoint then show that $T$ is self adjoint. Moreover if every $T_n \geqslant 0$ then show that $T\geqslant 0.$
+
+\horz
+
+\begin{proof}
+    Let $\left( T_{n} \right)$ be a sequence of self adjoint operators in $\calB \left( H \right)$ converging to some $T\in \calB \left( H \right)$. We wish to show that $T$ is again self-adjoint. Let $f,g \in H$ be arbitrary. We have that 
+    \begin{equation*}
+	\ip{T_{n}f,g}=\ip{f,T_{n}g}
+    \end{equation*}
+    for each $n\in \N$ as $T_{n}$'s are self-adjoint. Taking limits both sides, we have that
+    \begin{equation*}
+	\lim_{n} \ip{T_{n}f,g} = \lim_{n} \ip{f, T_{n}g}.
+    \end{equation*}
+    We will be done if we show that $\lim_{n} \ip{T_{n}f,g} = \ip{Tf,g}$. To prove this, consider the following:
+    \begin{align*}
+	\ip{T_{n}f -Tf,g} &\le \norm{T_{n}f-Tf, g} \\
+	& \le \norm{T_{n}-T}\norm{f}\norm{g}
+    \end{align*}
+    Since $T_{n} \to T$ in the operator norm, we have that $\lim_{n} T_{n}f = Tf$. Likewise, it follows that $\lim_{n} \ip{f,T_{n}g} = \ip{f, Tg}$.
+
+    Thus, we have that 
+    \begin{equation*}
+	\ip{Tf, g} = \ip{f, Tg}.
+    \end{equation*}
+    Since $f,g$ were arbitrary, we have that $T$ is self-adjoint.
+
+    Now, we proceed to show that a sequence of positive operators $\left( T_{n} \right)$ converge to a positive operator $T$ in the operator norm. Let $f\in H$. Then we claim that $\ip{Tf,f} \ge 0$. As in the previous argument, we have that $\lim_{n} \ip{T_{n}f,f} = \ip{Tf,f}$. Since $\ip{T_{n}f,f} \ge 0$ for each $n\in \N$, we have $\ip{Tf,f} \ge 0$.
+\end{proof}

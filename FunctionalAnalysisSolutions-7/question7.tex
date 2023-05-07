@@ -1,0 +1,27 @@
+\section{Question 7}
+\horz
+
+ Let $R >0$ be the radius of convergence of the power series $$f(z)= \sum\limits_{k=0}^{\infty} a_k z^k.$$  
+Suppose $T\in \mathcal B(H)$ and $R > \|T\|.$ Then show that the sequence $S_n= a_0+a_1T + a_2T^2+\cdots+a_n T^n$ is a Cauchy sequence in $\mathcal B(H).$ This gives us that the series $\sum\limits_{k=0}^{\infty} a_k T^k$ converges in $\mathcal B(H).$ We denote the limit operator by $f(T).$
+
+\horz
+
+\begin{proof}
+    Since $\norm{T} < R$, we have that
+    \begin{equation}
+	\sum_{k=0}^{\infty} \abs{a_{k}} \norm{T}^{k} < \infty
+	\label{eqn:7.1}
+    \end{equation}
+    because the power series converges absolutely and uniformly on disks of radius smaller than the radius of convergence.
+
+    To show that $S_{n}$ is Cauchy in $\calB \left( H \right)$, consider the following for $n\ge m$:
+    \begin{align*}
+	\norm{S_n - S_{m}} &= \norm{a_{m+1}T^{m+1}+ +\ldots a_{n}T_{n}} \\
+	&\le \abs{a_{m+1}}\norm{T}^{m+1} + \ldots + \abs{a_{n}} \norm{T}^{n}
+    \end{align*}
+    From \ref{eqn:7.1}, we have 
+    \begin{equation*}
+	\abs{a_{m+1}}\norm{T}^{m+1} + \ldots + \abs{a_{n}} \norm{T}^{n} \to 0 \text{ as } n,m \to \infty.
+    \end{equation*}
+    Thus, $\left( S_{n} \right)$ is Cauchy, Hence, the series $\sum_{k=0}^{\infty} a_{k} T^{k}$ converges in $\calB \left( H \right)$. 
+\end{proof}

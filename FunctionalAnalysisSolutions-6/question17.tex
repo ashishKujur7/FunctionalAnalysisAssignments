@@ -1,0 +1,45 @@
+\section{Question 17}
+\horz
+
+Let $\lambda = \{\lambda_j\}_{j\in \mathbb N}$ be sequence in $\ell^{\infty}(\mathbb N).$ Consider the unilateral weighted shift operator $W_{\lambda}$ on $\ell^2(\mathbb N)$ defined by 
+\begin{align*}
+W_{\lambda} (e_j)= \lambda_j e_{j+1},~~j\in \mathbb N,
+\end{align*}
+and extend linearly, that is, 
+\begin{align*}
+W_{\lambda} (c_1,c_2,c_3,\ldots)= (0,c_1\lambda_1,c_2\lambda_2,c_3\lambda_3,\ldots)
+\end{align*}
+Prove that the adjoint of $W_{\lambda}$ on $\ell^2(\mathbb N)$ is given by
+\begin{align*}
+W_{\lambda}^*(c_1,c_2,c_3,\ldots) = (c_2\overline{\lambda_1},c_3\overline{\lambda_2},c_4\overline{\lambda_3},\ldots).
+\end{align*}
+Moreover show that $\|W_{\lambda}\|= \|\lambda\|_{\infty} = \sup \{ |\lambda_j| : j\in \mathbb N\}.$
+
+\horz
+\begin{proof}
+    Let $\left( c_{1}, c_{2}, \ldots \right)$ and $\left( d_{1}, d_{2}, \ldots \right) \in \ell ^{2} \left( \N \right)$. Then consider the following:
+
+    \begin{align*}
+	\ip{\left( c_{1}, c_{2}, \ldots \right), W_{\lambda}^{*} \left( d_{1}, d_{2}, \ldots \right)} &= \ip{W_{\lambda} \left( c_{1}, c_{2}, \ldots \right), (d_{1}, d_{2}, \ldots )} \\
+    &= \ip{ \left( 0, c_{1}\lambda_{1}, c_{2} \lambda_{2}, \ldots ), \left( d_{1}, d_{2}, d_{3}, \ldots \right) \right) } \\
+    &= c_{1} \lambda_{1} \bar{d_{2}} + c_{2} \lambda_{2} \bar{d_{3}} + \ldots \\
+    &= \ip{(c_{1}, c_{2}, \ldots ), \left( \bar{\lambda_{1}} d_{2}, \bar{\lambda_{2}} d_{3} , \ldots \right)}.
+    \end{align*}
+    Since $\left( c_{i} \right)$ and $\left( d_{i} \right)$ were arbitrary, we have that 
+    \begin{equation*}
+	W_{\lambda} ^{*} \left( d_{1}, d_{2}, \ldots \right) = \left( \bar{\lambda_{1}} d_{2}, \bar{\lambda_{2}}d_{3}, \ldots \right) 
+    \end{equation*}
+    for each $\left( d_{1}, d_{2}, \ldots \right) \in \ell ^{2} \left( \N \right)$.
+
+    Now, observe that $W_{\lambda} \left( e_{i} \right) = \lambda_{i}$ for each $i\in \N$. Thus, we have that
+    \begin{equation*}
+	\norm{\lambda}_{\infty} = \sup_{j \in \N} {\abs{\lambda_{j}}} \le \norm{W_{\lambda}}.
+    \end{equation*}
+    To show the reverse inequality, let $\left( c_{1}, c_{2}, \ldots \right) \in \ell ^{2} \left( \N \right)$. Then we have that 
+    \begin{align*}
+	\norm{W_{\lambda} \left( c_{1}, c_{2}, \ldots \right)}_{2} ^{2} &= \sum_{i=1}^{\infty} \abs{\lambda _{i} c_{i}}^{2} \\
+	&\le \sup_{i\in \N} \abs{\lambda_{i}}^{2} \sum_{i=1}^{\infty} \abs{c_{i}}^{2} \\
+	&= \norm{\lambda}_{\infty}^{2} \norm{\left( c_{1}, c_{2}, \ldots \right)}_{2}
+    \end{align*}
+    This implies that $\norm{W_{\lambda}} \le \norm{\lambda}_{\infty}$. This completes the proof.
+\end{proof}

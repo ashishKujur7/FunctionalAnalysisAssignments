@@ -1,0 +1,94 @@
+\section{Question 13}
+\horz
+  
+Let $H$ be a Hilbert space and $T\in \mathcal B(H).$ Show that the following statements are equivalent:
+\begin{itemize}
+\item[(i)] $ran(T)$ closed.
+\item[(ii)] $T$ is bounded below on $(\ker T)^{\perp}$,  that is, there exist a $c>0$ such that $\|Tx\| \geqslant c|x\|$ for every $x\in (\ker T)^{\perp}.$
+\item[(iii)] There exist a $S, Y\in \mathcal B(H)$ such that $ST=I- P_{\ker T}$ and $TY = P_{ran(T)}.$
+\item[(iv)] $ran(T^*)$ closed.
+\end{itemize}
+
+\horz
+
+\begin{proof}
+    Let $H$ be a Hilbert space and $T\in \calB \left( H \right)$. We proceed to show the equivalences:
+    \begin{description}
+	\item[(i) $\Rightarrow$ (ii):] Assume that $\im \left( T \right)$ is closed. Then $\im T$ is a Hilbert space with the restricted inner product. Since $\ker T$ is closed, we can consider $X/\ker T$ which again is a Banach space with the quotient norm. Consider the linear isomorphism given by first isomorphism theorem:
+
+	    \begin{align*}
+		X/\ker T &\stackrel{\tilde{T}}{\to} \im T \\
+		[x] &\mapsto \tilde{T}\left( \left[ x \right] \right) = T(x)
+	    \end{align*}
+	    
+	    We aim to show that $\tilde{T}$ is continuous and apply the Banach isomorphism theorem to show that $\tilde{T} ^{-1}$ is continuous for it is bijective. Before that, we prove a result about Hilbert spaces:
+
+	    \begin{description}
+		\item[Lemma.] Let $H$ be a Hilbert space, $M$ be a closed subspace of $H$. Then 
+		    \begin{equation*}
+			\norm{\left[ x \right]_{X/M}} = \norm{P_{M^{\perp}}x}_{X}
+		    \end{equation*}
+		    for every $x \in X$.
+		    \begin{proof}[Proof of Lemma.]
+			Let $x\in X$. Since $M$ is a closed subspace of $X$, we have that 
+		    \begin{equation*}
+			x= P_{M}x + P_{M^{\perp}}x
+		    \end{equation*}
+		    where $P_{M}$, $P_{M^{\perp}}$ are projections into the subspaces $M$ and $M^{\perp}$ respectively.
+
+		    Let $y\in M$. Then
+		    \begin{equation*}
+			\norm{x-y}^{2} = \norm{y-P_{M}x}^{2} + \norm{P_{M^{\perp}}x}^{2}.
+		    \end{equation*}
+		    Taking infimum over $y\in M$, we have what we wanted.
+		    \end{proof} 
+	    \end{description}
+
+	    Now, we get back to what we were trying to prove. let $x\in H$. Then we have
+	    \begin{align*}
+		\norm{\tilde{T}\left[ x \right]} &= \norm{\tilde{T}\left[ P_{\left( \ker T \right)^{\perp}} x \right]} \\
+		&= \norm{TP_{\left( \ker T \right)^{\perp}}x}\\
+		&\le \norm{T} \norm{P_{(\ker T)^{\perp}}x} \\
+		&= \norm{T} \norm{[x]} & \text{(by Lemma that we just proved)}.
+	    \end{align*}
+	    This shows that $\tilde{T}$ is continuous.
+
+	    Now, let $f\in \left( \ker T \right)^{\perp}$. Then we have that 
+	    \begin{align*}
+		\norm{f} &= \norm{\tilde{T}^{-1}\left( \tilde{T} f \right)} \\
+		&\le \norm{\tilde{T}^{-1}} \norm{\tilde{T}f} \\
+		&\le \norm{\tilde{T}^{-1}} \norm{Tf}
+	    \end{align*}
+	    This shows that $T$ is bounded below on $\left( \ker T \right)^{\perp}$.
+%	    To this end, let $x\in X$. Now, $x=y+z$ for some $y\in \ker T$ and some $z\in (\ker T)^{\perp}$, we can do this because every Hilbert space can be decomposed into a closed subspace and its orthogonal complement and kernel is a closed subspace. Therefore, we have that $\norm{x}^{2}=\norm{y}^{2}+\norm{z}^{2}$.
+%
+%		Let $f \in \ker T$. Then we have that
+%		\begin{align*}
+%		    \norm{x-f}^{2} = \norm{y-f}^{2} + \norm{z}^{2}.
+%		\end{align*}
+%		Therefore, we have that 
+%		\begin{align*}
+%		    \inf_{f\in \ker T} \norm{x-f}^{2} &= \inf_{f\in \ker T} \norm{y-f}^{2} + \norm{z}^{2} \\
+%		    \leadsto \norm{\left[ x \right]}_{X/ \ker T}^{2} &= \norm{z}^{2} \\
+%		    \leadsto \norm{\left[ x \right]} &= \norm{z}.
+%		\end{align*}
+%
+%Then we have that 
+%	    \begin{align*}
+%		\norm{\tilde{T}[x]} &= \norm{\tilde{T}[z]} \\
+%		&= \norm{Tz} \\
+%		&\le \norm{T}\norm{z} \\
+%		&= \norm{T} \norm{\left[ x \right]} &\text{(by the previous paragraph).}
+%	    \end{align*}
+%	    This shows that $\tilde{T}$ is continuous. Since $\tilde{T}$ is bijective, continuous linear map, it must be that $\tilde{T}^{-1}$ is also continuous. We completed the proof of our aim.
+%
+%	    Let $y \in \left( \ker T \right)^{\perp}$. Then we have that 
+	    
+
+		\item[(ii) $\Rightarrow$ (iii):]
+
+	\item[(iii) $\Rightarrow$ (iv):]
+
+	\item[(iv) $\Rightarrow$ (i):] We showed that (i) $\Rightarrow$ (iv) from the previous arguments, that is, $\im (T)$ is closed implies $\im \left( T^{*} \right)$ for any bounded operator $T$ on a Hilbert space. Now, if $T$ is bounded, we have that $T^{*}$ is bounded and furthermore if $\im \left( T^{*} \right)$ is closed, we must have that $\im \left( (T^{*})^{*} \right)=\im (T)$ must be closed. This completes the proof.
+    \end{description}
+\end{proof}

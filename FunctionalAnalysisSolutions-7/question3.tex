@@ -1,0 +1,70 @@
+\section{Question 3}
+\horz
+\subsection{Proof of Polar Decomposition as in Bhatia with GORY DETAILS!}
+\begin{theorem}
+    Let $A$ be a linear operator in a Hilbert space $H$. Then there exists a partial isometry $W$ such that 
+    \begin{equation*}
+	A=W\abs{A}
+    \end{equation*}
+    whose initial space is $(\ker A)^{\perp}$ and final space is $\overline{\im \left( A \right)}$. The decomposition is unique in the following sense: if $A=UP$ where $U$ is a partial isometry, $P\ge 0$ and $\ker U =\ker P$ then $P=\abs{A}$ and $U=W$.
+    \label{thm:pdt}
+\end{theorem}
+\begin{proof}
+    We begin the proof by showing that $\norm{Ax}= \norm{\abs{A}x}$ for every $x\in H$. This also shows that $\ker A = \ker \abs{A}$ (prove this!). Indeed, for $x\in H$, we have that
+    \begin{align*}
+	\norm{Ax}^{2} &= \ip{Ax,Ax} & \text{(by definition of norm)} \\
+	&= \ip{A^{*}Ax,x} \\
+	&= \ip{\abs{A}^{2}x,x} & \text{(by definition of modulus of an operator)} \\
+	&= \ip{\abs{A}x, \abs{A}x} & \text{(You're mature enough to figure this out!)} \\
+	&= \norm{\abs{A}x}^{2}
+    \end{align*}
+Well this shows what we wanted to prove.
+
+Now, we define a map $\bar{W} : \im \left( \abs{A} \right) \to \im\left( A \right)$ by $\bar{W}\abs{A}x=Ax$ for each $x\in A$. Is this well-defined? YES! Suppose that $\abs{A}x = \abs{A}y$. Then we have that $\norm{\abs{A}\left( x-y \right)}=0$. Thus, $\norm{A\left( x-y \right)}=0$ by what we had proved earlier. Hence, $Ax=Ay$. Thus, $\bar{W}$ is well defined. In fact, this is an isometry by what we had proved earlier.
+
+Now, we claim that $\overline{\im \left( \abs{A} \right)}=\left( \ker A \right)^{\perp}$. To prove this, recall that for subspaces $M$ of Hilbert spaces, we have that $\left( M^{\perp} \right)^{\perp}=\overline{M}$. Now, consider the following:
+\begin{align*}
+    \overline{\im\left( \abs{A} \right)} &= \left( \left( \im \left( \abs{A} \right) \right)^{\perp} \right) ^{\perp} \\
+    &= \left( \ker \left( \abs{A}^{*} \right) \right)^{\perp} \\
+    &= \left( \ker \abs{A} \right)^{\perp} \\
+    &= \left( \ker A \right)^{\perp} & \text{(see the second line of this proof!)}
+\end{align*}
+Since $\im \left( A \right)$ is dense in $\left( \ker A \right)^{\perp}$, $\bar W$ extends linearly to an operator $\tilde{W} : \left( \ker A \right)^{\perp} \to \im A$ such that $\tilde{W} \mid _{\im \left( \abs{A} \right)} = \bar{W}$. Read the TILDE and BAR carefully lest you may get lost.
+
+Now, we can extend $\tilde{W}$ to all of $H$ by defining
+\begin{equation*}
+Wx=\tilde{W}P_{\left( \ker A \right)^{\perp}}x
+\end{equation*}
+for each $x\in H$.
+
+Let us now show that $W$ is a partial isometry. Now, if $x\in \left( \ker A \right)^{\perp}$ then $P_{\left( \ker A \right)^{\perp}}x = x$ and thus $\norm{Wx}=\norm{\tilde{W}x}$. We will be done if we show that $\norm{\tilde{W}x}=\norm{x}$. 
+
+
+\end{proof}
+
+\subsection{The Question}
+\horz
+
+Let $H$ be a Hilbert space and $T\in \mathcal B(H).$ Suppose $T=U|T|$ be the polar decomposition of $T.$ Show that 
+\begin{itemize}
+\item[(a)] $U^*T=|T|.$
+\item[(b)] $U|T|=|T|U$ if and only if $T (T^*T)= (T^*T)T.$ 
+\end{itemize}
+
+\horz
+
+\begin{proof}
+    Let $T=U\abs{T}$ where $U$ is a partial isometry whose initial space is $\left( \ker T \right)^{\perp}$ and final space is $\overline{ \left( \im T \right)}$.
+    \begin{enumerate}
+	\item Observe that $U^{*}T=U^{*}U\abs{T}$. But then $U^{*}U=P_{(\ker T)^{\perp}}$ because if $U$ is a partial isometry then it is an orthogonal projection onto its initial space. Also, note that
+	    \begin{align*}
+		\im \left( \abs{T} \right) & \subset \overline{\im \left( \abs{T} \right)} \\
+		&= \left( \ker \abs{T}^{*} \right)^{\perp} \\
+		&= \left( \ker \abs{T} \right) ^{\perp} \\ 
+		&= (\ker T)^{\perp}
+	    \end{align*}
+	    This shows that $U^{*}U \abs{T} = \abs{T}$.
+	\item
+	    
+    \end{enumerate}
+\end{proof}

@@ -1,0 +1,38 @@
+\section{Question 4}
+\horz
+
+Let $H$ be a Hilbert space and $T\in \mathcal B(H).$ Suppose that $T \geqslant 0.$ Show that $T^k\geqslant 0$ and  $\ker T = \ker T^k$ for every $k\in \mathbb N.$
+
+\horz
+
+\begin{proof}
+    Suppose that $T\ge 0$. We show by induction that $T^{k}\ge 0$ for each $k\in \N$. It easily follows by induction that $\left( T^{k} \right)^{*} = \left( T^{*} \right)^{k}$ for each $k\in \N$. Let us show that $T^{2} \ge 0$. Let $f\in H$. Then we have that 
+    \begin{align*}
+	\ip{T^{2}f,f} &= \ip{Tf, Tf} \\
+	&\ge 0
+    \end{align*}
+
+    Now, assume that we have shown that $T^{k} \ge 0$ for all $k \le n$ where $n\ge 3$. We now show that $T^{n} \ge 0$. Let $f\in H$. Then
+    \begin{align*}
+	\ip{T^{n}f,f} &= \ip{T^{n-1}f, Tf} \\
+	&= \ip{T^{n-2}(Tf), Tf}  \\
+	& \ge 0
+    \end{align*}
+    This shows that $T^{k} \ge 0$ for all $k \in \N$.
+
+    Let us proceed to show that $\ker T^{k} = \ker T^{k+1}$ for all $k \in \N$.  Let us do it for the case $k=1$. It is always true that $\ker T \subset \ker T^{2}$, so, let $f\in H$ such that $T^{2}f = 0$. To show $f= 0$, consider the following
+    \begin{align*}
+	\norm{Tf} &= \ip{Tf, Tf} \\
+	&= \ip{T^{2}f, f} \\
+	&= 0
+    \end{align*}
+    This shows that $Tf=0$. Hence $\ker T^{2} \subset \ker T$.
+
+    Now, suppose that the claim is true for $k=n$. Then we need to show that $\ker T^{n+1} = \ker T^{n+2}$. It is trivial that $\ker T^{n+1} \subset \ker T^{n+2}$. Now, let $f\in H$ and suppose that $T^{n+2}f = 0$. We wish to show that $T^{k+2}f = 0$. To that end, consider the following:
+    \begin{align*}
+	\norm{T^{k+1}f}^{2}&= \ip{T^{k+1}f, T^{k+1}f} \\
+	&= \ip{T^{k+2}f, T^{k}f} \\
+	&= 0
+    \end{align*}
+    Hence, we are done.
+    \end{proof}

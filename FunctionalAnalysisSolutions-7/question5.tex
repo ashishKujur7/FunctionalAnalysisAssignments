@@ -1,0 +1,21 @@
+\section{Question 5}
+\horz
+
+Let $H$ be a Hilbert space and $T, S\in \mathcal B(H),$ satisfying $T\geqslant 0$ , $S\geqslant 0$ and $TS=ST.$  Show that $TS \geqslant 0.$
+
+\horz
+
+\begin{proof}
+    Let $S, T \ge 0$ and suppose that $ST=TS$. Then we have that
+    \begin{align*}
+	\left( ST \right)^{*} &= T^{*}S^{*} \\
+	&= TS \\
+	&= ST.
+    \end{align*}
+    Consider the product $ST$. We claim that $ST= \sqrt{S}T\sqrt{S}$. This follows from Question 2. Since $ST=TS$, we have that $\sqrt{S}T= T\sqrt{S}$. Multiplying $\sqrt{S}$ both sides, we have that $ST=\sqrt{S}T\sqrt{S}$. Now, let $f\in H$. Then we have that
+    \begin{align*}
+	\ip{STf,f} &= \ip{\sqrt{S}T\sqrt{S}f,f} \\
+	&= \ip{T\sqrt{S}f, \sqrt{S}f} \\ 
+	&\ge 0 & (T\ge 0)
+    \end{align*}
+\end{proof}

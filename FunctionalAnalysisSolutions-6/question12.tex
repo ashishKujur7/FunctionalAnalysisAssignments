@@ -1,0 +1,56 @@
+\section{Question 12}
+\horz
+
+Let $H$ be a Hilbert space and $T \in \calB (H)$. Show that the following statements are equivalent:
+\begin{enumerate}[label=(\roman*)]
+    \item $T$ is left invertible, that is, there exists $S\in \calB \left( H \right)$ such that $ST=I$.
+    \item $T$ is bounded below, that is, there exists $c> 0$ such that $\norm{Tx}\ge c\norm{x}$ for each $x\in H$.
+    \item $\ker T =\left\{ 0 \right\}$ and $\im T$ is closed.
+\end{enumerate}
+
+\horz
+\begin{proof}
+    Let $T\in \calB \left( H \right)$.
+   	\begin{description}
+	    \item[(i) $\Longrightarrow$ (ii):]  Suppose that $T$ is left invertible. Define $c:=\norm{S}$ and let $x\in H$. Then we have that
+		\begin{align*}
+		    \norm{x}&=\norm{STx} & (ST=I) \\
+		    &\le \norm{S}\norm{Tx} & (S\in \calB (H)) \\
+		    &\le c\norm{Tx}
+		\end{align*}
+		Since $x$ was arbitrary, we are done.
+	    \item[(ii) $\Longrightarrow$ (iii):] Suppose that $T$ is bounded below. To see that $\ker T =\left\{ 0 \right\}$, let $x\in H$ and suppose $Tx=0$.Then we have that $c\norm{x} \ge \norm{Tx} =0$ which implies $\norm{x}=0$. Hence $x=0$.
+		To see that $\im T$ is closed, let $\left( y_{n} \right)$ be a sequence in $\im T$ converging to some $y \in H$. Then for each $n\in \N$, we have that $y_{n}=Tx_{n}$ for some $x_{n} \in H$.
+
+		Since $\left( y_{n} \right)$ is convergent, it is Cauchy. We show that $\left( x_{n} \right)$ is Cauchy. To this end, let $\varepsilon > 0$ be given. Then there exist some $N\in \N$ such that
+		\begin{equation*}
+		    \norm{Tx_{n}-Tx_{m}} < \varepsilon / c \text{ for every } n,m \ge N.
+		\end{equation*}
+		Now, let $n,m \ge N$. Then we have that
+		\begin{align*}
+		    \norm{x_{n}-x_{m}} &< \frac{1}{c} \norm{Tx_{n}-Tx_{m}} \\
+		    &< c \left( \frac{\varepsilon}{c} \right) = \varepsilon.
+		\end{align*}
+		This shows that $\left( x_{n} \right)$ is Cauchy.
+
+		Since $H$ is a Hilbert space, we have that $x_{n} \to x$ for some $x\in H$. Using the continuity of $T$, we have that $Tx_{n} \to Tx$. By the uniqueness of limits, we have that $Tx=y$. Thus, $y\in \im T$. This shows that $\im T$ is closed.
+
+	    \item[(iii) $\Rightarrow$ (i):] Suppose that $\ker T =\left\{ 0 \right\}$ and $\im T$ is closed. Consider the map $T^{-1} : \im T \to H$ which is given by $T^{-1}\left( Tx \right)=x$ for each $x\in H$. This map is well defined because $T$ is injective. Since $\im T$ is closed, $\im T$ is a Hilbert space in its own right. The fact that $T$ is bijective is clear. Thus, by the Banach Isomorphism Theorem, we have that $T^{-1}$ is invertible, that is, $T^{-1} \in \calB \left( \im T, H \right)$.
+
+		Now, we define $S: H \to H$ in the following fashion:
+		\begin{equation*}
+		    Sx=
+		    \begin{cases}
+			T^{-1}x & x\in \im T \\
+			0 & \text{otherwise.}
+		    \end{cases}
+		\end{equation*}
+		It is easy to see that $ST=I$ but it remains to show that $S\in \calB (H)$. To this end, consider the following:
+		\begin{align*}
+		    \norm{S} &= \sup_{x\in H,\norm{x}\le 1} \norm{Sx} \\
+		    &\le \sup_{x\in \im T, \norm{x} \le 1} \norm{T^{-1}x} \\
+		    &= \norm{T^{-1}}.
+		\end{align*}
+	\end{description}
+	This completes the proof.
+   \end{proof}

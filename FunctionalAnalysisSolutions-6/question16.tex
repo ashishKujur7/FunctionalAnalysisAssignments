@@ -1,0 +1,52 @@
+\section{Question 16}
+
+\horz
+
+Let $H$ be a Hilbert space and $A,B \in \mathcal B(H).$
+
+\begin{itemize}
+\item[(i)] Suppose $(I-AB)$ is invertible with $X= (I-AB)^{-1}.$ Show that 
+\begin{align*}
+(I-BA)(I+BXA)= I= (I+BXA)(I-BA).
+\end{align*}
+Hence $(I-BA)$ is invertible.
+\item[(ii)] Show that $\sigma(AB)\cup \{0\} = \sigma (BA) \cup \{0\}.$
+\item[(iii)] Assume that $H$ is of finite dimension. Then show that 
+$\sigma(AB)= \sigma (BA).$
+\end{itemize}
+
+\horz
+
+\begin{proof}
+    \begin{enumerate}[label=(\roman*)]
+	\item Observe that 
+	\begin{align*}
+	\left( I-BA \right)\left( I+BXA \right) &= \left( I-BA \right) \left( B\left( I-AB \right)^{-1}A + I \right) \\
+    &= B\left( I-AB)^{-1} \right)A + I - BAB \left( I-AB \right)^{-1} A - BA \\
+    &= B \left( \left( I-AB \right)^{-1} - AB \left( I-AB \right)^{-1} \right)A - BA + I \\
+    &= B\left( \left( I-AB \right) \left( I-AB \right)^{-1} \right) A - BA  + I\\
+    &= BA + I -BA \\
+    &= I
+	\end{align*}
+
+	and it can be also verified easily that
+	\begin{equation*}
+	    \left( I+BXA \right) \left( I-BA \right) = I.
+	\end{equation*}
+    \item We proceed to show that $\sigma \left( AB \right) \cup \left\{ 0 \right\} \subset \sigma \left( BA \right) \cup \left\{ 0 \right\}$. To this end, let $\lambda \in \sigma \left( AB \right) \cup \left\{ 0 \right\}$. If $\lambda =0$ then there is nothing to prove as $0$ is a member of the right set. Now, suppose $\lambda \ne 0$. Then that forces $\lambda \in \sigma \left( AB \right)$. Thus, $\lambda - AB$ is not invertible. We claim that $\lambda - BA$ is not invertible. If it were invertible then we would have that  $I-(\lambda^{-1}B)A$ is invertible as $\lambda \ne 0$. By item (i), we have that $I-A\left( \lambda^{-1} B \right)$ is invertible. Hence $\lambda-BA$ is invertible. That is a contradiction! This shows that $\sigma \left( AB \right) \cup \left\{ 0 \right\} \subset \sigma \left( BA \right) \cup \left\{ 0 \right\}$. Interchanging the roles of $A$ and $B$, we have that $\sigma \left( BA \right) \cup \left\{ 0 \right\} \subset \sigma \left( AB \right) \cup \left\{ 0 \right\}$. This completes the proof.
+    \item  For finite dimensional vector spaces, we have that the spectrum is the same as the point spectrum. Therefore, we aim to show that $\sigma_{p} \left( AB \right) = \sigma _{p} \left( BA \right)$. Let $\lambda \in \sigma_{p} \left( AB \right)$. First, let us show that $\sigma_{p} \left( AB \right) \subset \sigma_{p} \left( BA \right)$.
+
+	Let $\lambda \in \sigma _{p} \left( AB \right)$. Therefore, $\lambda - AB$ is not injective. Thus, there is some nonzero $f\in H$ such that $(\lambda - AB)f  = 0$. Now, we wish to show that $\lambda - BA$ is not injective. Consider $Bf$. If $Bf = 0$ then $ABf= \lambda f = 0$ which would imply that $f=0$. Hence $Bf \ne 0$.
+
+	Now, observe that 
+	\begin{align*}
+	    \left( \lambda - BA \right)Bf &=  \left( \lambda B - BAB \right)f  \\
+	    &= B \left( \lambda - AB \right)f \\
+	    &= 0.
+	\end{align*}
+	This shows that $\lambda \in \sigma_{p} \left( BA \right)$.
+	Hence, $\sigma_{p} \left( AB \right) \subset \sigma _{p} \left( BA \right)$.
+	
+	Interchanging the roles of $A$ and $B$, we have $\sigma _{p} \left( BA \right) \subset \sigma_{p} \left( AB \right)$.
+\end{enumerate}
+\end{proof}

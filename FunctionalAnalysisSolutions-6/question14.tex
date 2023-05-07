@@ -1,0 +1,20 @@
+\section{Question 14}
+
+\horz
+
+Let $H$ be a Hilbert space. Suppose that $T\in \mathcal B(H)$ and $T$ is invertible. Then show that $$\sigma(T^{-1})=\left \{ \frac{1}{\lambda} : \lambda \in \sigma (T)\right \}.$$
+
+\horz
+
+
+\begin{proof}
+    Let $T \in \calB (H)$ and suppose that $T$ is invertible, hence, $T^{-1}$ is invertible. Then $0 \not \in \sigma (T^{-1})$. Therefore, whatever we are trying to prove makes sense.
+
+    Let $\alpha \in \sigma (T^{-1})$. We may assume $\alpha \ne  0$ because we have shown that $0 \not \in \sigma \left( T^{-1} \right)$. Then $T^{-1}-\alpha I$ is not invertible. We claim that $T-\frac{1}{\alpha} I$ is not invertible. If our claim was not true then $T- \frac{1}{\alpha}I$ is invertible and $\alpha T^{-1}$ is invertible. Hence $\alpha T^{-1}(T- \alpha^{-1} I) = \alpha - T^{-1}$ would be invertible which would contradict our assumption. Thus, we have that $\frac{1}{\alpha} \in \sigma (T)$. Hence $\alpha = \frac{1}{\underbrace{1/\alpha}_{\in \sigma (T)}}$.
+
+    To show the converse, let $\lambda \in \sigma (T)$. Note that $\lambda \ne 0$ because $T$ is invertible. Now, we wish to show that $\frac{1}{\lambda} \in \sigma (T^{-1})$, that is, $T^{-1} - \frac{1}{\lambda} I$ is not invertible. Suppose that $T^{-1}- \frac{1}{\lambda}$ were invertible. Then we would have that 
+    \begin{equation*}
+	\lambda - T=(\lambda T) \left( T^{-1} - \frac{1}{\lambda} \right)
+    \end{equation*}
+    would be invertible which would contradict our assumption that $\lambda \in \sigma (T)$.
+\end{proof}

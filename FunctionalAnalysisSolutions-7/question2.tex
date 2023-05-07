@@ -1,0 +1,19 @@
+\section{Question 2}
+\horz
+
+Let $H$ be a Hilbert space and $T,S\in \mathcal B(H),$ satisfying $T\geqslant 0$ and $TS=ST.$  Show that $\sqrt{T} S = S \sqrt{T}.$
+
+\horz
+
+\begin{proof}
+    Since $T \ge 0$ we have that $\sqrt{T}$ is a limit of sequence of polynomials in $T$, that is, there exists polynomials $p_{n}$ such that $p_{n} (T)$ converges to $\sqrt{T}$ in the operator norm. \footnote{See Rynne Johnson Theorem 6.58. for a proof}
+
+    Since $S$ and $T$ commute by hypothesis, we have that
+    \begin{equation*}
+	p_{n}\left( T \right) S = S p_{n} \left( T \right) 
+    \end{equation*}
+    for each $n\in \N$. Taking limit $n\to \infty$ both sides we have that
+    \begin{equation*}
+	\sqrt{T} S = S \sqrt{T}.
+    \end{equation*}
+\end{proof}
